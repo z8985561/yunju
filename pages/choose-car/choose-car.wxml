@@ -1,0 +1,61 @@
+<scroll-view scroll-y style="height: {{windowHeight}}px" scroll-into-view="{{alpha}}" enable-back-to-top="true">
+  <!-- 头部筛选按钮部分 -->
+  <view class='filtrate'>
+    <view class='filtrate-top'>
+      <navigator class='btn' hover-class='none' url>条件筛选（9691车型）></navigator>
+      <navigator hover-class='none' url>
+        <icon type='search' size='20' color='#333'></icon>
+      </navigator>
+    </view>
+    <view class='filtrate-list'>
+      <navigator hover-class='none' url=''>5-8万</navigator>
+      <navigator hover-class='none' url=''>8-15万</navigator>
+      <navigator hover-class='none' url=''>15-20万</navigator>
+      <navigator hover-class='none' url=''>25-30万</navigator>
+      <navigator hover-class='none' url=''>轿车</navigator>
+      <navigator hover-class='none' url=''>SUV</navigator>
+      <navigator hover-class='none' url=''>7座</navigator>
+      <navigator hover-class='none' url=''>紧凑型车</navigator>
+    </view>
+  </view>
+  <!-- 头部筛选按钮部分end -->
+  <!-- 热门品牌 -->
+  <view class='hot-brand'>
+    <view class='title'>热门品牌</view>
+    <view class='list'>
+      <block wx:for="{{brandList}}" wx:key="index">
+        <navigator hover-class='none' url='{{item.url}}'>
+          <image src='{{item.imgUrl}}' mode='widthFix'></image>
+          <text>{{item.text}}</text>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <!-- 热门品牌end -->
+  <view class="alphabet">
+    <view class="alphabet-list">
+      <view wx:for="{{list}}" wx:key="unique" id="{{item.alphabet}}" class="section-item">
+        <view class="section-item-header">
+          {{item.alphabet}}
+        </view>
+        <navigator url='' hover-class='none' wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
+          <view class="section-item-cell {{cellIndex != (item.datas.length-1) ? 'border-bottom':''}}">
+            <image class='avater' src='{{cell.avater}}'></image>
+            <view>
+              <view>{{cell.name}}</view>
+              <view class='state'>{{cell.state}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view data-id="selector" catchtouchstart="handlerAlphaTap" catchtouchmove="handlerMove" catchtouchend='handlerEnd' style='height:{{windowHeight - 120}}px;' class="alphanet-selector {{addBg?'bg':''}}">
+  <view data-ap="{{item.alphabet}}" wx:for="{{list}}" wx:key="unique" class="selector-one">
+    {{item.alphabet}}
+  </view>
+</view>
+<view wx:if="{{addBg}}" class='show-alpha'>
+  {{alpha}}
+</view>

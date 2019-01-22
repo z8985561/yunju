@@ -1,0 +1,114 @@
+<!--pages/filtru/filtru.wxml-->
+<view class='filtru-text'>
+  <text wx:if='{{budget||carLevelArr||choNationality||choGearbox||choBunkers||choStructure||choEmissions||choSeats}}'>{{budget ? budget +"/":""}}{{carLevelArr ? carLevelArr +"/":""}}{{choNationality ? choNationality +"/":""}}{{choGearbox ? choGearbox+"/" : ""}}{{choBunkers?choBunkers+"/":""}}{{choStructure?choStructure+"/":""}}{{choEmissions?choEmissions+"/":""}}{{choSeats?choSeats+"/":""}}</text>
+  <text wx:else>您选择的条件会显示在这里</text>
+</view>
+<view class='page '>
+  <!-- 预算 -->
+  <view class='budget '>
+    <view class='title '>预算</view>
+    <block wx:for="{{budgetList}}" wx:key="item.id">
+      <view class='{{budgetActive==item.id ? "on" : "" }} ' data-startPrice='{{item.startPrice}} ' data-endPrice='{{item.endPrice}} ' data-id="{{item.id}}" bindtap='budgetChoose'>
+        {{item.startPrice ? item.startPrice:""}}{{item.startPrice && item.endPrice != 150 ? "-":""}}{{item.endPrice == 150 ? "": item.endPrice}}{{item.startPrice ? item.endPrice == 150 ? "万以上": "万" : "万以下"}}</view>
+    </block>
+  </view>
+  <!-- silder  -->
+  <!-- 预算 -->
+  <!-- 选择品牌 -->
+  <navigator class='product-btn ' hover-class='none ' url=' '>
+    选择品牌
+  </navigator>
+  <!-- 选择品牌end -->
+  <view class='bar '></view>
+  <!-- 级别 -->
+  <view>
+    <view class='title '>级别</view>
+    <checkbox-group class="car-level" bindchange="chooseCarLevel">
+      <block wx:for="{{carLevelList}}" wx:key="{{item.id}}">
+        <label class="checkbox">
+          <checkbox value="{{item.text}}" checked="{{item.checked}}"></checkbox>
+          <view class='{{item.checked? "on": ""}} '>{{item.text}}</view>
+        </label>
+      </block>
+    </checkbox-group>
+  </view>
+  <!-- 级别end -->
+  <!-- 国别 -->
+  <view>
+    <view class='title '>国别</view>
+    <checkbox-group class="weui-flex base-check" bindchange="chooseNationality">
+      <block wx:for="{{nationalityList}}" wx:key="{{item.id}}">
+        <label class="weui-flex__item checkbox">
+          <checkbox value="{{item.text}}" checked="{{item.checked}}"></checkbox>
+          <view class='placeholder {{item.checked? "on": ""}} '>{{item.text}}</view>
+        </label>
+      </block>
+    </checkbox-group>
+  </view>
+  <!-- 国别end -->
+  <!-- 变速箱 -->
+  <view>
+    <view class='title '>变速箱</view>
+    <checkbox-group class="weui-flex base-check" bindchange="chooseGearbox">
+      <block wx:for="{{gearboxList}}" wx:key="{{item.id}}">
+        <label class="weui-flex__item checkbox">
+          <checkbox value="{{item.text}}" checked="{{item.checked}}"></checkbox>
+          <view class='placeholder {{item.checked? "on": ""}} '>{{item.text}}</view>
+        </label>
+      </block>
+    </checkbox-group>
+  </view>
+  <!-- 变速箱end -->
+  <!-- 燃料 -->
+  <view>
+    <view class='title '>燃料</view>
+    <checkbox-group class="weui-flex base-check" bindchange="chooseBunkers">
+      <block wx:for="{{bunkersList}}" wx:key="{{item.id}}">
+        <label class="weui-flex__item checkbox">
+          <checkbox value="{{item.text}}" checked="{{item.checked}}"></checkbox>
+          <view class='placeholder {{item.checked? "on": ""}} '>{{item.text}}</view>
+        </label>
+      </block>
+    </checkbox-group>
+  </view>
+  <!-- 燃料end -->
+  <!-- 结构 -->
+  <view>
+    <view class='title '>结构</view>
+    <checkbox-group class="weui-flex base-check" bindchange="chooseStructure">
+      <block wx:for="{{structureList}}" wx:key="{{item.id}}">
+        <label class="weui-flex__item checkbox">
+          <checkbox value="{{item.text}}" checked="{{item.checked}}"></checkbox>
+          <view class='placeholder {{item.checked? "on": ""}} '>{{item.text}}</view>
+        </label>
+      </block>
+    </checkbox-group>
+  </view>
+  <!-- 结构end -->
+  <!-- 排量 -->
+  <view>
+    <view class='title '>排量</view>
+    <checkbox-group class="weui-flex base-check" bindchange="chooseEmissions">
+      <block wx:for="{{emissionsList}}" wx:key="{{item.id}}">
+        <label class="weui-flex__item checkbox">
+          <checkbox value="{{item.text}}" checked="{{item.checked}}"></checkbox>
+          <view class='placeholder {{item.checked? "on": ""}} '>{{item.text}}</view>
+        </label>
+      </block>
+    </checkbox-group>
+  </view>
+  <!-- 排量end -->
+  <!-- 座位数 -->
+  <view>
+    <view class='title '>座位数</view>
+    <checkbox-group class="weui-flex base-check" bindchange="chooseSeats">
+      <block wx:for="{{seatsList}}" wx:key="{{item.id}}">
+        <label class="weui-flex__item checkbox">
+          <checkbox value="{{item.text}}" checked="{{item.checked}}"></checkbox>
+          <view class='placeholder {{item.checked? "on": ""}} '>{{item.text}}</view>
+        </label>
+      </block>
+    </checkbox-group>
+  </view>
+  <!-- 座位数end -->
+</view>
