@@ -245,7 +245,7 @@ Page({
     if (this.data.budgetActive != e.target.dataset.id) {
       this.setData({
         budgetActive: e.target.dataset.id,
-        budget: e._relatedInfo.anchorTargetText
+        budget: e.target.dataset.text
       })
       return;
     }
@@ -374,6 +374,22 @@ Page({
       }
     }
     this.setData(changed)
+  },
+  // 重置
+  resetBtn(){
+    var obj = {
+      budgetActive: 99,
+      budget: "", //预算
+      choSeats:"",
+      choEmissions:"",
+      choStructure:"",
+      choBunkers:"",
+      choGearbox:"",
+      choNationality:"",
+      carLevelArr:""
+    };
+
+    this.setData(obj)
   },
   /**
    * 生命周期函数--监听页面加载

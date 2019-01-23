@@ -1,0 +1,17 @@
+<!--pages/insurance/insurance.wxml-->
+<view class='head'>
+  <image src='/img/tx-1.png'></image>
+  <view>COOL</view>
+</view>
+<van-cell-group>
+  <van-field value="{{plateNum}}" label="车牌号" placeholder="请输入车牌号" name="plateNum"/>
+  <van-field value="{{userName}}" label="车主姓名" placeholder="请输入车主姓名" name="userName"/>
+  <van-field value="{{phoneNum}}" label="联系方式" placeholder="请输入联系方式" name="phoneNum"/>
+  <van-field value="{{userId}}" label="身份证信息" placeholder="请输入身份证信息" name="userId"/>
+  <van-field value="{{headingCode}}" label="车牌识别代码" placeholder="请输入车牌识别代码" name="headingCode"/>
+  <van-field value="{{engineNum}}" label="发动机号" placeholder="请输入发动机号" name="engineNum"/>
+  <van-field value="{{carDate}}" label="车辆注册日期" placeholder="请输入车辆注册日期" name="carDate"/>
+  <van-field value="{{brandType}}" label="品牌型号" placeholder="请输入品牌型号" name="brandType"/>
+</van-cell-group>
+
+<view class='next-btn'>下一步</view>

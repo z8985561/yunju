@@ -18,7 +18,7 @@
 }
 
 .page {
-  padding: 120rpx 30rpx 0;
+  padding: 120rpx 30rpx 150rpx;
 }
 
 .page .title {
@@ -41,7 +41,7 @@
   height: 50rpx;
   line-height: 50rpx;
   margin-bottom: 10rpx;
-  border: 1rpx solid #f3f3f3;
+  border: 2rpx solid #f3f3f3;
   border-radius: 5rpx;
   font-size: 30rpx;
   text-align: center;
@@ -113,7 +113,7 @@
 .base-check .placeholder {
   height: 60rpx;
   line-height: 60rpx;
-  border: 1rpx solid #f3f3f3;
+  border: 2rpx solid #f3f3f3;
   border-radius: 5rpx;
 }
 
@@ -121,4 +121,42 @@
   border-color: #ff8987;
   background-color: #fff7f6;
   color: #e44a41;
+}
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  text-align: center;
+  font-size: 34rpx;
+}
+.reset-btn{
+  width: 160rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #ffaf00;
+  border-radius: 40rpx;
+}
+.filtru-btn{
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #dd463d;
+  border-radius: 40rpx;
+}
+.home{
+  position: absolute;
+  right: 30rpx;
+  top:-100rpx;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px red;
 }

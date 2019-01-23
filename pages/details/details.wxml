@@ -1,0 +1,46 @@
+<!--pages/details/details.wxml-->
+<swiper autoplay="true">
+  <block wx:for="{{productItem.imgUrls}}" wx:key="index">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" mode='widthFix' />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='title'>
+  <view>
+    <view class='fz-28'>本田凌派 2019款 180Turbo 手动舒适版</view>
+    <view class='fz-34 price'>9.98
+      <text class='fz-24'>万起</text>
+    </view>
+  </view>
+  <view>参团</view>
+</view>
+<!-- 选择车型 -->
+<view class='fz-30 choosecar' bindtap='toggleActionSheet'>选择车型：{{productItem.name}}</view>
+<van-action-sheet style="height:30px;" show="{{ show }}" actions="{{ carTypeList }}" bind:close="onClose" cancel-text="取消" bind:select="onSelect" bind:cancel="onClose">
+</van-action-sheet>
+<!-- 选择车型end -->
+<!-- 详情和询价 -->
+<van-tabs bind:click="onClick">
+  <van-tab title="详情">
+    <view class="content">内容</view>
+  </van-tab>
+  <van-tab title="询价">
+    <view class="content">
+      <view class='store-item'>
+        <view class='left'>
+          <view class='fz-34'>广本第一店</view>
+          <view class='fz-28'>广州市白云区黄石东路448号（江夏安华灯饰城公交站旁）</view>
+          <view class='fz-24 c6'>距离您2.3km</view>
+        </view>
+        <view class='right'>
+          <view class='price fz-34'>
+            9.98<text class='fz-24'>万起</text>
+          </view>
+          <navigator class='Inquiry-btn' hover-class='none' url='/pages/inquiry/inquiry'>询底价</navigator>
+        </view>
+      </view>
+    </view>
+  </van-tab>
+</van-tabs>
+<!-- 详情和询价end -->

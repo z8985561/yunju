@@ -4,7 +4,7 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
 		"postcss": true,
 		"minified": true,
@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -49,6 +49,24 @@
 					"id": 1,
 					"name": "筛选车型",
 					"pathName": "pages/filtru/filtru",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "详情",
+					"pathName": "pages/details/details",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "询底价",
+					"pathName": "pages/inquiry/inquiry",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "保险",
+					"pathName": "pages/insurance/insurance",
 					"query": ""
 				}
 			]

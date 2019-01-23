@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-field": "/vant-ui/field/index",
+    "van-button": "/vant-ui/button/index",
+    "van-row": "/vant-ui/row/index",
+    "van-col": "/vant-ui/col/index"
+  }
+}

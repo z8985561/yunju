@@ -1,0 +1,49 @@
+/* pages/details/details.wxss */
+.fz-24{font-size: 24rpx;}
+.fz-26{font-size: 26rpx;}
+.fz-28{font-size: 28rpx;}
+.fz-30{font-size: 30rpx;}
+.fz-32{font-size: 32rpx;}
+.fz-34{font-size: 34rpx;}
+.c6{color: #666}
+swiper{
+  height: 315px;
+}
+swiper image{
+  width: 100%;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30rpx;
+}
+.price{
+  color: red;
+}
+.choosecar{
+  padding: 10rpx 30rpx;
+  border-top: 20rpx solid rgb(242,242,242);
+  border-bottom: 20rpx solid rgb(242,242,242);
+}
+.store-item{
+  display: flex;
+  padding: 20rpx 30rpx;
+}
+.store-item .left{
+  flex:1;
+  padding-right: 30rpx;
+}
+.store-item .right{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Inquiry-btn{
+  width: 100%;
+  background-color: #e44a41;
+  color:#fff;
+  text-align: center;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-action-sheet": "/vant-ui/action-sheet/index",
+    "van-tab": "/vant-ui/tab/index",
+    "van-tabs": "/vant-ui/tabs/index"
+  }
+}

@@ -1,0 +1,56 @@
+/* pages/insurance/insurance-form.wxss */
+.content{
+  background-color: #eee;
+}
+.title{
+  padding:  30rpx 30rpx;
+}
+.item{
+  display: flex;
+  align-items: center;
+  padding:  0 30rpx;
+  background-color: #fff;
+  margin-bottom: 30rpx;
+}
+.item view{
+  font-size: 28rpx;
+  color: #aaa;
+}
+.item .name{
+  font-size: 30rpx;
+  color: #333;
+}
+.item .left{
+  flex: 1;
+  padding: 30rpx 60rpx 30rpx 0;
+}
+.item .right view{
+  position: relative;
+  width: 140rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: left;
+  text-indent: 10rpx;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+  color:#333;
+}
+.item .right view::after{
+  position: absolute;
+  right: 10rpx;
+  top: 40%;
+  content:"";
+  border: 10rpx solid #fff;
+  border-top:16rpx solid #333;
+}
+.submit{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}

@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "van-action-sheet": "/vant-ui/action-sheet/index"
+  }
+}

@@ -8,7 +8,14 @@
   <view class='budget '>
     <view class='title '>预算</view>
     <block wx:for="{{budgetList}}" wx:key="item.id">
-      <view class='{{budgetActive==item.id ? "on" : "" }} ' data-startPrice='{{item.startPrice}} ' data-endPrice='{{item.endPrice}} ' data-id="{{item.id}}" bindtap='budgetChoose'>
+      <view 
+      class='{{budgetActive==item.id ? "on" : "" }} ' 
+      data-startPrice='{{item.startPrice}}' 
+      data-endPrice='{{item.endPrice}}' 
+      data-id="{{item.id}}" 
+      bindtap='budgetChoose'
+      data-text='{{item.startPrice ? item.startPrice:""}}{{item.startPrice && item.endPrice != 150 ? "-":""}}{{item.endPrice == 150 ? "": item.endPrice}}{{item.startPrice ? item.endPrice == 150 ? "万以上": "万" : "万以下"}}'
+      >
         {{item.startPrice ? item.startPrice:""}}{{item.startPrice && item.endPrice != 150 ? "-":""}}{{item.endPrice == 150 ? "": item.endPrice}}{{item.startPrice ? item.endPrice == 150 ? "万以上": "万" : "万以下"}}</view>
     </block>
   </view>
@@ -111,4 +118,9 @@
     </checkbox-group>
   </view>
   <!-- 座位数end -->
+</view>
+<view class='bottom'>
+<view class='reset-btn' bindtap='resetBtn'>重置</view>
+<view class='filtru-btn' bindtap='iltruBtn'>有116款车型符合要求</view>
+<navigator class='home' hover-class='none' url="">首</navigator>
 </view>

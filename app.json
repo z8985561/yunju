@@ -3,7 +3,11 @@
     "pages/index/index",
     "pages/logs/logs",
     "pages/choose-car/choose-car",
-    "pages/filtru/filtru"
+    "pages/filtru/filtru",
+    "pages/details/details",
+    "pages/inquiry/inquiry",
+    "pages/insurance/insurance",
+    "pages/insurance/insurance-form"
   ],
   "window":{
     "backgroundTextStyle":"light",
