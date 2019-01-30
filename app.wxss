@@ -5,7 +5,19 @@
  * Copyright 2017 Tencent, Inc.
  * Licensed under the MIT license
  */
-
+.fz-24{font-size: 24rpx;}
+.fz-26{font-size: 26rpx;}
+.fz-28{font-size: 28rpx;}
+.fz-30{font-size: 30rpx;}
+.fz-32{font-size: 32rpx;}
+.fz-34{font-size: 34rpx;}
+.c6{color: #666}
+.cf{color:#fff;}
+.cc{color:#ccc;}
+.fw-700{font-weight: 700;}
+.text-line{text-decoration: line-through;}
+.plr-30{padding: 0 30rpx;}
+.mb-150{margin-bottom:150rpx;}
 page {
   line-height: 1.6;
   font-family: -apple-system-font, Helvetica Neue, sans-serif;

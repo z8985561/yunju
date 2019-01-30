@@ -1,0 +1,18 @@
+<!--pages/brand-list/brand-list.wxml-->
+<scroll-view scroll-y style='height:100vh;'>
+  <view class='brand-wrap'>
+    <view class='title fz-28'>一汽-大众奥迪</view>
+    <view class='list'>
+      <navigator class='item' hover-class='none' url='/pages/details/details'>
+        <view class='left'>
+          <image src='/img/car-1.jpg' mode='widthFix'></image>
+        </view>
+        <view class='right'>
+          <view>奥迪A3</view>
+          <view class='price fz-28'>19.1万-25.62万</view>
+          <view class='fz-24 c6'>紧凑型车</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</scroll-view>

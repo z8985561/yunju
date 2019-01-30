@@ -1,0 +1,117 @@
+<!--pages/offered/offered.wxml-->
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:search="onSearch" bind:cancel="onCancel">
+</van-search>
+<van-tabs active="{{ active }}" animated>
+  <van-tab title="全部">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="雪佛兰">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="宝马">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="丰田">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="大众">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="奥迪">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="福特">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="本田">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+  <van-tab title="别克">
+    <scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+      <offered-item url="/pages/offered/detail"></offered-item>
+    </scroll-view>
+  </van-tab>
+</van-tabs>
+
+<view class='bottom-nav'>
+  <navigator hover-class='none' url='/pages/offered/init-offered' class='fz-30 cf' >点击发起新团购</navigator>
+</view>

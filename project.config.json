@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -68,6 +68,26 @@
 					"name": "保险",
 					"pathName": "pages/insurance/insurance",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "商家列表",
+					"pathName": "pages/shops/shops",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "参团",
+					"pathName": "pages/offered/offered",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "奥迪",
+					"pathName": "pages/brand-list/brand-list",
+					"query": "",
+					"scene": null
 				}
 			]
 		}

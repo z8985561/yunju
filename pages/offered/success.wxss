@@ -1,0 +1,17 @@
+/* pages/offered/success.wxss */
+.page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+button{
+  margin-top: 60rpx;
+  background-color: #333;
+  color: #fff;
+  border-radius: 46rpx;
+  width: 400rpx;
+}
+icon{
+  margin: 60rpx 0;
+}

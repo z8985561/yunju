@@ -1,0 +1,105 @@
+<!--pages/shops/shops.wxml-->
+<van-search value="{{ value }}" placeholder="请输入搜索关键词" bind:search="onSearch" bind:cancel="onCancel">
+</van-search>
+<view class='filter'>
+  <view class='filter-nav'>
+    <view bindtap='showCityChange'>{{activeText || "附近"}}
+      <van-icon custom-style="vertical-align: middle;" name="arrow-down" />
+    </view>
+    <view bindtap='showRecChange'>{{recText||"智能推荐"}}
+      <van-icon custom-style="vertical-align: middle;" name="arrow-down" />
+    </view>
+  </view>
+  <view class='filter-content'>
+    <view class='filter-city'>
+      <van-tree-select wx:if="{{showCity}}" items="{{ cityList }}" main-active-index="{{ mainActiveIndex }}" active-id="{{ activeId }}" bind:click-nav="onClickNav" bind:click-item="onClickItem" />
+    </view>
+    <view class='recommend' wx:if='{{showRec}}'>
+      <view bindtap='changeRec' data-text="智能推荐">智能推荐</view>
+      <view bindtap='changeRec' data-text="离我最近">离我最近</view>
+      <view bindtap='changeRec' data-text="人气最高">人气最高</view>
+    </view>
+  </view>
+</view>
+<view class='title'>推荐商家</view>
+<scroll-view scroll-y style='height:{{scrollHeight}}px;'>
+  <view class='shops-list'>
+    <view class='shops-item'>
+      <view class='left'>
+        <view class='fz-34 fw-700'>4S 广物汽贸广东众益</view>
+        <view class='fz-28'>地址：广东省广州市黄埔天河区茅岗路989好上海大众4S店(黄埔车管所)</view>
+        <view class='fz-28'>电话：020-8888888</view>
+        <view class='fz-24 c6'>距离您2.4km</view>
+      </view>
+      <view class='right'>
+      <van-icon bindtap='callMe' data-phone="020-8888888" size="40px" name="phone" />
+      </view>
+    </view>
+    <view class='shops-item'>
+      <view class='left'>
+        <view class='fz-34 fw-700'>4S 广物汽贸广东众益</view>
+        <view class='fz-28'>地址：广东省广州市黄埔天河区茅岗路989好上海大众4S店(黄埔车管所)</view>
+        <view class='fz-28'>电话：020-8888888</view>
+        <view class='fz-24 c6'>距离您2.4km</view>
+      </view>
+      <view class='right'>
+      <van-icon bindtap='callMe' data-phone="020-8888888" size="40px" name="phone" />
+      </view>
+    </view>
+    <view class='shops-item'>
+      <view class='left'>
+        <view class='fz-34 fw-700'>4S 广物汽贸广东众益</view>
+        <view class='fz-28'>地址：广东省广州市黄埔天河区茅岗路989好上海大众4S店(黄埔车管所)</view>
+        <view class='fz-28'>电话：020-8888888</view>
+        <view class='fz-24 c6'>距离您2.4km</view>
+      </view>
+      <view class='right'>
+      <van-icon bindtap='callMe' data-phone="020-8888888" size="40px" name="phone" />
+      </view>
+    </view>
+    <view class='shops-item'>
+      <view class='left'>
+        <view class='fz-34 fw-700'>4S 广物汽贸广东众益</view>
+        <view class='fz-28'>地址：广东省广州市黄埔天河区茅岗路989好上海大众4S店(黄埔车管所)</view>
+        <view class='fz-28'>电话：020-8888888</view>
+        <view class='fz-24 c6'>距离您2.4km</view>
+      </view>
+      <view class='right'>
+      <van-icon bindtap='callMe' data-phone="020-8888888" size="40px" name="phone" />
+      </view>
+    </view>
+    <view class='shops-item'>
+      <view class='left'>
+        <view class='fz-34 fw-700'>4S 广物汽贸广东众益</view>
+        <view class='fz-28'>地址：广东省广州市黄埔天河区茅岗路989好上海大众4S店(黄埔车管所)</view>
+        <view class='fz-28'>电话：020-8888888</view>
+        <view class='fz-24 c6'>距离您2.4km</view>
+      </view>
+      <view class='right'>
+      <van-icon bindtap='callMe' data-phone="020-8888888" size="40px" name="phone" />
+      </view>
+    </view>
+    <view class='shops-item'>
+      <view class='left'>
+        <view class='fz-34 fw-700'>4S 广物汽贸广东众益</view>
+        <view class='fz-28'>地址：广东省广州市黄埔天河区茅岗路989好上海大众4S店(黄埔车管所)</view>
+        <view class='fz-28'>电话：020-8888888</view>
+        <view class='fz-24 c6'>距离您2.4km</view>
+      </view>
+      <view class='right'>
+      <van-icon bindtap='callMe' data-phone="020-8888888" size="40px" name="phone" />
+      </view>
+    </view>
+    <view class='shops-item'>
+      <view class='left'>
+        <view class='fz-34 fw-700'>4S 广物汽贸广东众益</view>
+        <view class='fz-28'>地址：广东省广州市黄埔天河区茅岗路989好上海大众4S店(黄埔车管所)</view>
+        <view class='fz-28'>电话：020-8888888</view>
+        <view class='fz-24 c6'>距离您2.4km</view>
+      </view>
+      <view class='right'>
+      <van-icon bindtap='callMe' data-phone="020-8888888" size="40px" name="phone" />
+      </view>
+    </view>
+  </view>
+</scroll-view>

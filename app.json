@@ -1,5 +1,5 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
     "pages/choose-car/choose-car",
@@ -7,12 +7,20 @@
     "pages/details/details",
     "pages/inquiry/inquiry",
     "pages/insurance/insurance",
-    "pages/insurance/insurance-form"
+    "pages/insurance/insurance-form",
+    "pages/category/category",
+    "pages/my/my",
+    "pages/shops/shops",
+    "pages/offered/offered",
+    "pages/offered/detail",
+    "pages/offered/init-offered",
+    "pages/offered/success",
+    "pages/brand-list/brand-list"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTitleText": "云矩",
+    "navigationBarTextStyle": "black"
   }
 }

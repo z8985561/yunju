@@ -1,0 +1,50 @@
+/* pages/shops/shops.wxss */
+.filter{
+  position: relative;
+}
+.filter-nav{
+  display: flex;
+}
+.filter-nav > view{
+  width: 50%;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 30rpx;
+}
+.filter-content{
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ z-index: 999;
+}
+.recommend{
+  padding: 30rpx 0;
+  background-color: #fff;
+  font-size: 30rpx;
+  text-align: center;
+}
+.title{
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  text-align: center;
+  background-color: #f2f2f2;
+}
+.shops-list{
+}
+.shops-item{
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+  border-bottom: 10px solid #f2f2f2;
+}
+.shops-item .left{
+  width: 80%;
+  border-right: 1px solid #ddd;
+}
+.shops-item .right{
+  flex: 1;
+  text-align: center;
+}

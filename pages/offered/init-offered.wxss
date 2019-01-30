@@ -1,0 +1,8 @@
+/* pages/offered/init-offered.wxss */
+@import "./detail.wxss";
+.process{
+  padding: 30rpx 40rpx;
+}
+.submit-btn{
+  margin-bottom: 30rpx;
+}

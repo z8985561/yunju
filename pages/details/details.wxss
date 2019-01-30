@@ -1,11 +1,4 @@
 /* pages/details/details.wxss */
-.fz-24{font-size: 24rpx;}
-.fz-26{font-size: 26rpx;}
-.fz-28{font-size: 28rpx;}
-.fz-30{font-size: 30rpx;}
-.fz-32{font-size: 32rpx;}
-.fz-34{font-size: 34rpx;}
-.c6{color: #666}
 swiper{
   height: 315px;
 }

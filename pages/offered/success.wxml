@@ -1,0 +1,8 @@
+<!--pages/offered/success.wxml-->
+<view class='page'>
+  <icon type="success" size="100" />
+  <view class='fz-30 c6'>参团成功</view>
+  <view class='fz-24 c6'>为保证您的信息安全</view>
+  <view class='fz-24 c6'>购车专员将用95013****的虚拟号与您联系</view>
+  <button open-type='share'>加速成员</button>
+</view>

@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "van-search": "/vant-ui/search/index",
+    "van-tree-select": "/vant-ui/tree-select/index",
+    "van-icon": "/vant-ui/icon/index"
+  },
+  "navigationBarTitleText": "商家列表"
+}
