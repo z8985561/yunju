@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "van-action-sheet": "/vant-ui/action-sheet/index",
+    "van-tab": "/vant-ui/tab/index",
+    "van-tabs": "/vant-ui/tabs/index",
+    "van-goods-action": "/vant-ui/goods-action/index",
+    "van-goods-action-icon": "/vant-ui/goods-action-icon/index",
+    "van-goods-action-button": "/vant-ui/goods-action-button/index",
+    "van-toast": "/vant-ui/toast/index"
+  }
+}

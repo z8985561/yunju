@@ -1,0 +1,154 @@
+<!--pages/insurance/insurance-form.wxml-->
+<view class='content'>
+  <view class='title'>商业保险信息</view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <switch checked bindchange="switchChange" />
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <view bindtap='showSheet'>不投</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <view bindtap='showSheet'>不投</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <view bindtap='showSheet'>不投</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <view bindtap='showSheet'>不投</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <switch checked bindchange="switchChange" />
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <switch checked bindchange="switchChange" />
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <view bindtap='showSheet'>不投</view>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <switch checked bindchange="switchChange" />
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <switch checked bindchange="switchChange" />
+    </view>
+  </view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <switch checked bindchange="switchChange" />
+    </view>
+  </view>
+</view>
+<view class='content'>
+  <view class='title'>交强险+车船税</view>
+  <view class='item'>
+    <view class='left'>
+      <view class='name'>机动车损失险</view>
+      <view class='des'>
+        <view>用于赔付自己车辆损失</view>
+        <view>[推荐]95%，适合2年内新车、五年内新手、经常开车、常去异地的车主</view>
+      </view>
+    </view>
+    <view class='right'>
+      <switch checked bindchange="switchChange" />
+    </view>
+  </view>
+</view>
+<van-action-sheet show="{{ show }}" actions="{{ actions }}" cancel-text="取消" bind:close="onClose" bind:select="onSelect" bind:cancel="onClose"/>
+<view class='title'></view>
+<view class='submit'>一键提交</view>

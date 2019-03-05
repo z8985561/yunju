@@ -1,0 +1,47 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='page navbar'>
+    <view class='category-search'>
+      <view class='weui-flex'>
+        <view class='weui-flex__item category-search-form'>
+          <view class='flex-head-search' id='searchBar'>
+            <navigator hoverClass='none' class='weui-search-bar__form' url='/application/pages/groups/category/goods?fromsearch=1'>
+              <view class='weui-search-bar__box category-search-box'>
+                <view class='flex-icon-search'>
+                  <image class='icon20' src='{{icons.search}}'></image>
+                </view>
+                <view class='weui-search-bar__input flex-input'>输入关键字进行搜索</view>
+                <navigator class='weui-icon-clear' id='searchClear' url='javascript:'></navigator>
+              </view>
+            </navigator>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="lynn_item"></view>
+    <ul class="lynn_index_list_ul row" style="position:relative;margin-top:20px;">
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+        <navigator url='/application/pages/groups/goods/index?id={{item.id}}&frommyshop=1'>
+        <li class="lynn_index_list_li fui-list goods-list">
+          <a href="" class="external lynn_index_list_a fui-list-media">
+            <image src="{{item.thumb}}"></image>
+          </a>
+          <view class="lynn_index_list_info fui-list-inner" onclick="">
+            <text>{{item.title}}</text>
+            <text>{{item.description}}</text>
+            <del>原价：{{item.price}}</del>
+            <view class="lynn_index_list_team">
+              <span class="lynn_index_list_team_left">
+                <image src="{{icons.group}}"></image>{{item.groupnum}}人团<em></em>{{item.groupsprice}}/{{item.units}}
+              </span>
+              <a href="" class="external lynn_index_list_team_a">去拼团 ></a>
+            </view>
+          </view>
+        </li>
+        </navigator>
+        </block>
+      </ul>
+  </view>
+</block>

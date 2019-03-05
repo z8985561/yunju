@@ -1,0 +1,165 @@
+/* pages/filtru/filtru.wxss */
+page{
+  background-color: #fff;
+}
+.filtru-text {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  line-height: 120rpx;
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #eee;
+  background-color: #fff;
+  font-size: 30rpx;
+  color: #808080;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.page {
+  padding: 120rpx 30rpx 150rpx;
+}
+
+.page .title {
+  font-size: 30rpx;
+  color: #999;
+  width: 100%;
+  border: none;
+  text-align: left;
+}
+
+.budget {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30rpx;
+}
+
+.budget view {
+  width: 23.5%;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-bottom: 10rpx;
+  border: 2rpx solid #f3f3f3;
+  border-radius: 5rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.budget view.on {
+  border-color: #ff8987;
+  background-color: #fff7f6;
+  color: #e44a41;
+}
+
+.product-btn {
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 1rpx solid #ff8987;
+  background-color: #fff7f6;
+  color: #e44a41;
+  border-radius: 5rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.bar {
+  margin: 30rpx 0;
+  border-top: 1rpx solid #f3f3f3;
+}
+
+.car-level {
+  margin-top: 30rpx;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.car-level .checkbox {
+  display: block;
+  width: 33.33%;
+  margin-bottom: 20rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.car-level .checkbox checkbox {
+  display: none;
+}
+
+.car-level .checkbox .on {
+  color: #e44a41;
+}
+
+.base-check {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.base-check .checkbox checkbox {
+  display: none;
+}
+
+.base-check .checkbox {
+  flex: 0 1 25%;
+  padding: 10rpx;
+  font-size: 30rpx;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.base-check .placeholder {
+  height: 60rpx;
+  line-height: 60rpx;
+  border: 2rpx solid #f3f3f3;
+  border-radius: 5rpx;
+}
+
+.base-check .on {
+  border-color: #ff8987;
+  background-color: #fff7f6;
+  color: #e44a41;
+}
+.bottom{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100rpx;
+  padding: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  text-align: center;
+  font-size: 34rpx;
+  box-sizing: border-box;
+}
+.reset-btn{
+  width: 160rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #ffaf00;
+  border-radius: 40rpx;
+}
+.filtru-btn{
+  width: 500rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #dd463d;
+  border-radius: 40rpx;
+}
+.home{
+  position: absolute;
+  right: 30rpx;
+  top:-100rpx;
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: red;
+  border-radius: 50%;
+  box-shadow: 1px 1px 5px red;
+}

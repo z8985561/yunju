@@ -1,0 +1,16 @@
+@import "index.wxss";
+.lynn_goods_btn {
+    width: 40%;
+    height: 50px;
+    color: #fff;
+    display: block;
+    float: left;
+    text-align: center;
+    font-size: 12px;
+    padding: 4px 0;
+}
+.lynn_btn_danger {
+    border: 1px solid #fd5454;
+    background: #fd5454;
+    color: #fff;
+}

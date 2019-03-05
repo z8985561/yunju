@@ -1,0 +1,1 @@
+<include src="/pages/diy/template/tpl.wxml" wx:for="{{diypages.items}}" wx:for-index="diyitemid" wx:for-item="diyitem"></include>

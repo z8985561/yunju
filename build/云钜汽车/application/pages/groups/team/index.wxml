@@ -1,0 +1,109 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='fui-page order-list-page'>
+    <view class="fui-tab fui-tab-danger">
+      <view class='item {{status=="0"?"active":""}}' data-type='0' bindtap='selecSatusted'>组团中</view>
+      <view class='item {{status=="1"?"active":""}}' data-type='1' bindtap='selecSatusted'>组团成功</view>
+      <view class='item {{status=="-1"?"active":""}}' data-type='-1' bindtap='selecSatusted'>组团失败</view>
+    </view>
+
+
+    <block wx:if='{{list.length != 0}}'>
+      <view class='contain'>
+        <block wx:for="{{list}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view class='lynn_order_item'>
+            <navigator url='/application/pages/groups/team/detail?orderid={{item.id}}&teamid={{item.teamid}}' class="external">
+              <view class='lynn_order_title'>
+                订单号: {{item.orderno}}>
+                <view class="order_status" style="float:right;">
+                  <view wx:if="{{item.itemnum == item.groupnum}}">
+                    团购已成功
+                  </view>
+                  <view wx:if="{{item.itemnum!=item.groupnum}}">
+                    <view wx:if="{{item.success==1}}">
+                      团购已成功
+                    </view>
+                    <view wx:if="{{item.success!=1}}">
+                      <view wx:if="{{item.lasttime>0}}">
+                        <view wx:if="{{item.status==0}}">
+                          未支付
+                        </view>
+                        <view wx:elif="{{item.itemnum < item.groupnum}}">
+                          <view wx:if="{{item.status > 0}}">
+                            团购进行中
+                          </view>
+                          <view wx:else>
+                            团购已取消
+                          </view>
+                        </view>
+                      </view>
+                      <view wx:if="{{item.lasttime<=0}}">
+                        团购已过期
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class="fui-list goods-info">
+                <view class="fui-list-media">
+                  <image src='{{item.thumb}}' style='height:40px;width:40px;' class="round goods_img"></image>
+                </view>
+                <view class="fui-list-inner">
+                  <view class='text text-left'>{{item.title}}</view>
+                  <view class='subtitle text-left'>{{item.optiontitle}}</view>
+                </view>
+                <view class='fui-list-angle'>
+                  <view class='marketprice text-danger'>¥ {{item.groupsprice}}</view>/
+                  <view wx:if="{{item.units}}" style='display:inline;'>{{item.goodsnum}}{{item.units}}</view>
+                  <view wx:else>1件</view>
+                  <br/> x1
+                </view>
+                <view style="position: absolute;right: 80px;top:3px;width:60px;height: 60px;z-index: 999;">
+                  <view wx:if="{{item.itemnum>=item.groupnum}}">
+                    <image alt="" width="100%" height="100%" src="/addons/ewei_shopv2/plugin/groups/template/mobile/default/images/success.png"> </image>
+                  </view>
+                  <view wx:else>
+                    <view wx:if="{{item.success<0}}">
+                      <image alt="" width="100%" height="100%" src="/addons/ewei_shopv2/plugin/groups/template/mobile/default/images/fail.png"> </image>
+                    </view>
+                  </view>
+                </view>
+              </view>
+              <view class='fui-list list-padding'>
+                <view class='fui-list-inner text-right totle'>
+                  运费:
+                  <text class='text-danger'>¥ {{item.freight}}</text>元, 共
+                  <text class='text-danger'>1</text> 个商品 总额:
+                  <text class='text-danger'>¥ {{item.amount}}</text>元
+                </view>
+              </view>
+            </navigator>
+            <view class='fui-list list-padding'>
+              <view class="fui-list-inner text-right">
+                <view wx:if='{{item.status==3||item.status==-1}}' style="display:inline;">
+                  <navigator class="lynn_btn lynn_btn_danger" url="/application/pages/groups/goods/index?id={{item.goodid}}">再拼一单</navigator>
+                </view>
+                <navigator class="external lynn_btn lynn_btn_danger" url="/application/pages/groups/team/detail?orderid={{item.id}}&teamid={{item.teamid}}">查看团详情</navigator>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+    <block wx:else>
+      <view class='contain'>
+        <view class='navbar order-list' style="padding-top:100rpx;padding-bottom:0;">
+          <view class='fui-content-inner'>
+            <view class='content-empty'>
+              <view class='icon icon-lights'></view>
+              <br/>暂时没有参加任何团
+            </view>
+            <view class="fui-according-group" id="container"></view>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</block>

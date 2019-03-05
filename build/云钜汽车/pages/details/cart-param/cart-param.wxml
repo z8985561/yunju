@@ -1,0 +1,1810 @@
+<view class='cart'>
+  <image src='{{cart.imgUrl}}' mode='widthFix'></image>
+  <view>{{cart.title}}</view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>基本参数</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车型名称</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.name}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>厂商指导价(元)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.price}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>厂商</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{vendor_name}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>级别</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_jibie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>发动机</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fadongji}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>变速箱</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_biansuxiang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>长*宽*高(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhang_kuan_gao_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车身结构</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_cheshenjiegou}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>最高车速(km/h)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuigaochesu_km_h}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>官方0-100km/h</text>
+        <view class='fz-26'>加速(s)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_guanfang0_100km_hjiasu_s}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>实测0-100km/h</text>
+        <view class='fz-26'>加速(s)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_shice0_100km_hjiasu_s}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>实测0-100km/h</text>
+        <view class='fz-26'>制动(s)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_shice100_0km_hzhidong_m}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>实测油耗</text>
+        <view class='fz-26'>(L/100km)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_shiceyouhao_l_100km}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>工信部综合油耗</text>
+        <view class='fz-26'>(L/100km)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_gongxinbuzongheyouhao_l_100km}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>整车质保</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhengchezhibao}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>车身</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>长度(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_changdu_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>宽度(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_kuandu_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>高度(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_gaodu_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>轴距(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhouju_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前轮距(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qianlunju_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后轮距(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houlunju_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>最小离地间隙</text>
+        <view class='fz-26'>(mm)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuixiaolidejianxi_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车身结构</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_cheshenjiegou}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车门数(个)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_chemenshu_ge}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>座位数(个)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuoweishu_ge}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>油箱容积(L)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_youxiangrongji_l}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>行李箱容积(L)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_xinglixiangrongji_l}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>整备质量(kg)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhengbeizhiliang_kg}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>发动机</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>发动机型号</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fadongjixinghao}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>排量(ml)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_pailiang_ml}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>排量(L)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_pailiang_ml.toFixed(1)}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>进气形式</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_jinqixingshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>气缸排列形式</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qigangpailiexingshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>气缸数(个)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qigangshu_ge}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>每缸气门数(个)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_meigangqimenshu_ge}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>压缩比</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yasuobi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>配气机构</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_peiqijigou}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>缸径(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_gangjing_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>行程(mm)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_xingcheng_mm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>最大马力(Ps)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuidamali_ps}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>最大功率(kW)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuidagonglv_kw}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>最大功率转速</text>
+        <view class='fz-26'>(rpm)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuidagonglvzhuansu_rpm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>最大扭矩(N - m)</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuidaniuju_n_m}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>最大扭矩转速</text>
+        <view class='fz-26'>(rpm)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuidaniujuzhuansu_rpm}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>发动机特有技术</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fadongjiteyoujishu}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>燃料形式</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_ranliaoxingshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>燃油标号</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_ranyoubiaohao}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>供油方式</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_gongyoufangshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>供油方式</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_gongyoufangshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>缸盖材料</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_ganggaicailiao}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>缸体材料</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_gangticailiao}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>环保标准</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_huanbaobiaozhun}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>变速箱</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>简称</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_jiancheng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>挡位个数</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_dangweigeshu}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>变速箱类型</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_biansuxiangleixing}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>底盘转向</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>驱动方式</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qudongfangshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前悬架类型</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qianxuanjialeixing}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后悬架类型</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houxuanjialeixing}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后悬架类型</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houxuanjialeixing}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>助力类型</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhulileixing}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车体结构</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_chetijiegou}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>车轮制动</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前制动器类型</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qianzhidongqileixing}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后制动器类型</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houzhidongqileixing}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>驻车制动类型</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhuchezhidongleixing}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前轮胎规格</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qianluntaiguige}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后轮胎规格</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houluntaiguige}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>备胎规格</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_beitaiguige}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>安全装备</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>主/副驾驶安全</text>
+        <view class='fz-26'>气囊</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhu_fujiashizuoanquanqinang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前/后排侧气囊</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qian_houpaiceqinang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前/后排头部气囊</text>
+        <view class='fz-26'>(气帘)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qian_houpaitoubuqinang_qilian}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>膝部气囊</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_xibuqinang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>胎压监测装置</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_taiyajiancezhuangzhi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>零胎压继续行驶</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_lingtaiyajixuxingshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>零胎压继续行驶</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_lingtaiyajixuxingshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>安全带未系提示</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_anquandaiweixitishi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>ISOFIX儿童座椅</text>
+        <view class='fz-26'>接口</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_isofixertongzuoyijiekou}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>发动机电子防盗</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fadongjidianzifangdao}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车内中控锁</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_cheneizhongkongsuo}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>遥控钥匙</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yaokongyaoshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>无钥匙启动系统</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_wuyaoshiqidongxitong}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>无钥匙启动系统</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_wuyaoshiqidongxitong}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>无钥匙进入系统</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_wuyaoshijinruxitong}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>操控配置</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>ABS防抱死</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_absfangbaosi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>制动力分配</text>
+        <view class='fz-26' style="font-size:10px;">(EBD/CBC等)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhidonglifenpei_ebd_cbcdeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>刹车辅助</text>
+        <view class='fz-22' style="font-size:10px;">(EBA/BSA/BA等)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_shachefuzhu_eba_bas_badeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>牵引力控制</text>
+        <view class='fz-22' style="font-size:10px;">(ASR/TCS/TRC等)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qianyinlikongzhi_asr_tcs_trcdeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车身稳定控制</text>
+        <view class='fz-22' style="font-size:10px;">(ESC/ESP/DSC等)</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_cheshenwendingkongzhi_esc_esp_dscdeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>上坡辅助</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_shangpofuzhu}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>自动驻车</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zidongzhuche}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>陡坡缓降</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_doupohuanjiang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>可变悬架</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_kebianxuanjia}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>空气悬架</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_kongqixuanjia}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>可变转向比</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_kebianzhuanxiangbi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前桥限滑差速器/</text>
+        <view class='fz-26'>差速锁</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qianqiaoxianhuachasuqi_chasusuo}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>中央差速器差速</text>
+        <view class='fz-26'>锁止功能</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhongyangchasuqisuozhigongneng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后桥限滑差速器/</text>
+        <view class='fz-26'>差速锁</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houqiaoxianhuachasuqi_chasusuo}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>外部配置</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>电动天窗</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_diandongtianchuang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>感应后备厢</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_ganyinghoubeixiang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车顶行李架</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_chedingxinglijia}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>全景天窗</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_quanjingtianchuang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>运动外观套件</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yundongwaiguantaojian}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>铝合金轮圈</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_lvhejinlunquan}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>电动吸合门</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_diandongxihemen}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>侧滑门</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_cehuamen}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>电动后备箱</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_diandonghoubeixiang}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>内部配置</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>真皮方向盘</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_pizhifangxiangpan}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>方向盘记忆</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fangxiangpanjiyi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>全液晶仪表盘</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_quanyejingyibiaopan}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>方向盘调节</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fangxiangpantiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>方向盘电动调节</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fangxiangpandiandongtiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>多功能方向盘</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_duogongnengfangxiangpan}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>方向盘换挡</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fangxiangpanhuandang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>方向盘加热</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fangxiangpanjiare}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>定速巡航</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_dingsuxunhang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前/后驻车雷达</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qian_houzhucheleida}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>倒车视频影像</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_daocheshipinyingxiang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>行车电脑显示屏</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_xingchediannaoxianshiping}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>HUD抬头数字显</text>
+        <view class='fz-26'>示</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_hudtaitoushuzixianshi}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>座椅配置</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>座椅材质</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuoyicaizhi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>运动风格座椅</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yundongfenggezuoyi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>座椅高低调节</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zuoyigaoditiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>腰部支撑调节</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yaobuzhichengtiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>肩部支撑调节</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_jianbuzhichengtiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>主/副驾驶座电动</text>
+        <view class='fz-26'>调节</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhu_fujiashizuodiandongtiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>第二排靠背角度</text>
+        <view class='fz-26'>调节</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_dierpaikaobeijiaodutiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>第二排座椅移动</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_dierpaizuoyiyidong}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后排座椅电动</text>
+        <view class='fz-26'>调节</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houpaizuoyidiandongtiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>电动座椅记忆</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_diandongzuoyijiyi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前/后排座椅加热</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qian_houpaizuoyijiare}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前/后排座椅通风</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qian_houpaizuoyitongfeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前/后排座椅按摩</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qian_houpaizuoyianmo}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后排座椅放倒</text>
+        <view class='fz-26'>方式</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houpaizuoyifangdaofangshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>第三排座椅</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_disanpaizuoyi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前/后中央扶手</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qian_houzhongyangfushou}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后排杯架</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houpaibeijia}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后排杯架</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houpaibeijia}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>多媒体配置</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>GPS导航系统</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_gpsdaohangxitong}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>220V/230V电源</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_220v_230vdianyuan}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>外接音频接口</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_waijieyinyuanjiekou}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>CD/DVD</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_cd_dvd}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>中控台彩色大屏</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhongkongtaicaisedaping}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>蓝牙/车载电话</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_lanya_chezaidianhua}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车载电视</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_chezaidianshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后排液晶屏</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houpaiyejingping}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>多媒体系统</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>-</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>扬声器品牌</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yangshengqipinpai}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>扬声器数量</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yangshengqishuliang}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>灯光配置</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>近光灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_jinguangdeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>远光灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yuanguangdeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>自适应远近灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zishiyingyuanjinguang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>日间行车灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_ledrijianxingchedeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>自动头灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zidongtoudeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>转向辅助灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhuanxiangfuzhudeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>转向头灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhuanxiangtoudeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前雾灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qianwudeng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>大灯高度可调</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_dadenggaodukediao}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>大灯清洗装置</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_dadengqingxizhuangzhi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车内氛围灯</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_cheneifenweideng}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>玻璃/后视镜</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>前/后电动车窗</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_qian_houdiandongchechuang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车窗防夹手功能</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_chechuangfangjiashougongneng}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>防紫外线/隔热</text>
+        <view class='fz-26'>玻璃</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fangziwaixian_gereboli}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后视镜电动调节</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houshijingdiandongtiaojie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后视镜加热</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houshijingjiare}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>内/外后视镜自动</text>
+        <view class='fz-26'>防眩目</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_nei_waihoushijingzidongfangxuanmu}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后视镜电动折叠</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houshijingdiandongzhedie}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后视镜记忆</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houshijingjiyi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后风挡遮阳帘</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houfengdangzheyanglian}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后排侧遮阳帘</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houpaicezheyanglian}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后排侧隐私玻璃</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houpaiceyinsiboli}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>遮阳板化妆镜</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zheyangbanhuazhuangjing}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后雨刷</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houyushua}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>感应雨刷</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_ganyingyushua}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>空调/冰箱</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>空调控制方式</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_kongtiaokongzhifangshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后排独立空调</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houpaidulikongtiao}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>后座出风口</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_houzuochufengkou}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>温度分区控制</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_wendufenqukongzhi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车内空气调节/花</text>
+        <view class='fz-26'>粉过滤</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_cheneikongqitiaojie_huafenguolv}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车载冰箱</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_chezaibingxiang}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="content">
+  <view class='car-list'>
+    <!-- 标题 -->
+    <view class='title'>
+      <view class='left fz-30'>高科技配置</view>
+      <view class='right'>
+        <view class='s-yuan'></view>
+        <view class="fz-30">标配</view>
+        <view class='k-yuan'></view>
+        <view class="fz-30">选配</view>
+        <view class='c0'>-</view>
+        <view>无</view>
+      </view>
+    </view>
+    <!-- 配置 -->
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>自动泊车入位</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zidongbocheruwei}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>发动机启停技术</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_fadongjiqitingjishu}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>并线辅助</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_bingxianfuzhu}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>车道偏离预警系</text>
+        <view class='fz-26'>统</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_chedaopianliyujingxitong}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>主动刹车/主动安</text>
+        <view class='fz-26'>全系统</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhudongshache_zhudonganquanxitong}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>整体主动转向系</text>
+        <view class='fz-26'>统</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhengtizhudongzhuanxiangxitong}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>夜视系统</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_yeshixitong}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>中控液晶屏分屏</text>
+        <view class='fz-26'>显示</view>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zhongkongyejingpingfenpingxianshi}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>自适应巡航</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_zishiyingxunhang}}</text>
+      </view>
+    </view>
+    <view class='config-item'>
+      <view class='left'>
+        <text class='fz-26'>全景摄像头</text>
+      </view>
+      <view class='right'>
+        <text class='fz-26'>{{carItem.config.p_quanjingshexiangtou}}</text>
+      </view>
+    </view>
+  </view>
+</view>

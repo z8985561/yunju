@@ -1,0 +1,45 @@
+<view bindtap="actOutPicker" class="act-mask {{fadein}}" wx:if="{{fadein=='in'}}"></view>
+<view class="inner {{fadein}} {{iphonexnavbar}}">
+    <view bindtap="actOutPicker" class="fui-cell-title" style="border-bottom:1px solid #efefef;padding:30rpx 28rpx;">请确认收货地址<text class="icox icox-close pull-right"></text>
+    </view>
+    <view class="fui-cell-group fui-sale-group noborder" style="margin-top:0; overflow-y: auto;padding-bottom:130rpx;max-height:700rpx">
+        <block wx:if="{{list.showAddress&&data.dispatchtype == 0}}">
+        <view class="act-cell" wx:if="{{list.address}}">
+            <view class="act-cell-title">
+              <text class="act-tips">姓名：{{list.address.realname}}</text>
+            </view>
+            <view class="act-cell-title">
+               <text class="act-tips">手机：{{list.address.mobile}}</text>
+            </view>
+            <view class="act-cell-inner">
+                <text class="">地址：{{list.address.province + list.address.city + list.address.area + "" + list.address.address}}</text>
+            </view>
+        </view>
+        </block>
+        <block wx:if="{{list.showAddress&&data.dispatchtype == 1}}">
+          <view class="act-cell">
+            <view class="act-cell-title">
+                <text class="act-tips">
+                门店:{{list.carrierInfo.storename}}
+                </text>
+            </view>
+            <view class="act-cell-inner">
+                <text>姓名：{{list.carrierInfo.realname}}</text>
+                <text>手机：{{list.carrierInfo.mobile}}</text>
+                <text>门店地址：{{list.carrierInfo.address}}</text>
+            </view>
+          </view>
+        </block>
+        <block wx:if="{{!list.showAddress}}">
+          <view class="act-cell"> 
+              <view class="act-cell-title">
+                  <text class="act-tips">姓名：{{list.member.realname}}</text>
+              </view>
+              <view class="act-cell-title">
+                  <text class="act-tips">手机：{{list.member.mobile}}</text>
+              </view>
+          </view>
+        </block>
+    </view>
+    <view bindtap="submit" class='btn act-btn btn-danger {{submit && "disabled"}}'>立即支付</view>
+</view>

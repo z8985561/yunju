@@ -1,0 +1,82 @@
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class='page'>
+<view class='fui-page creditshop-index-page'>
+  <view class='fui-content navbar'>
+  <block wx:for="{{shop.sorts}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+    <block wx:if="{{item.visible == 1}}">
+      <block wx:if="{{item.type == 'adv'}}">
+        <view class="swiper-container">
+        <swiper class="swiper_box" >
+          <block wx:for='{{item.data}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+            <swiper-item>
+                <image src="{{item.thumb}}"></image>
+            </swiper-item>
+          </block>
+        </swiper>
+        </view> 
+      </block>
+    </block>
+
+    <block wx:if="{{item.visible == 1}}">
+      <block wx:if="{{item.type == 'category'}}">  
+        <view class="lynn_index_menu row">
+          <block wx:for='{{item.data}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+            <navigator url="/application/pages/groups/category/index?id={{item.id}}">
+              <image src="{{item.thumb}}"></image>
+              <text>{{item.name}}</text>
+            </navigator>
+          </block>
+        </view>
+      </block>
+    </block>
+
+    <block wx:if="{{item.visible == 1}}">
+      <block wx:if="{{item.type == 'recgoods'}}">
+        <view class="lynn_item"></view>
+        <view class="lynn_index_rec">
+          <text>正在热卖</text>
+          <text>H O T S A L E</text>
+        </view>
+        <view class="fui-list-group noclick lynn_index_list_ul row">
+          <block wx:for='{{item.data}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <navigator url='/application/pages/groups/goods/index?id={{item.id}}&frommyshop=1'>
+          <view class="lynn_index_list_li fui-list goods-list">
+            <view class="external lynn_index_list_a fui-list-media">
+              <image src="{{item.thumb}}"></image>
+            </view>
+            <view class="lynn_index_list_info fui-list-inner" onclick="">
+              <text class="lynn_index_list_title">{{item.title}}</text>
+              <text class="lynn_index_list_type">{{item.groupnum}}人团</text>
+              
+              <view class="lynn_index_list_team">
+                <view class="lynn_index_list_team_left">
+                  <text class="lynn_index_group_good_price"> ¥{{item.groupsprice}}/<text style='font-size:26rpx;'>{{item.goodsnum}}{{item.units}}</text></text>
+                  <del class="lynn-index-group_good_proprice" style="font-size:26rpx">￥{{item.price}}</del>
+                </view>
+                <a  class="external lynn_index_list_team_a">立即拼团</a>
+              </view>
+            </view>
+          </view>
+          </navigator>
+          </block>
+        </view>
+      </block>
+    </block>     
+  </block>
+  </view>
+  <view class='fui-navbar'>
+    <navigator hoverClass='none' open-type='redirect' url='/application/pages/groups/index/index' class='nav-item {{route != "home" || "active"}}' >
+      <image class='icon' src='{{route == "home"?icons.home_red:icons.home}}'></image><text class='label'>拼团首页</text></navigator>
+    <navigator hoverClass='none' open-type='redirect'  class='nav-item {{route != "category" || active}}' url='/application/pages/groups/category/index'>
+      <image class='icon' src='{{route == "category"?icons.cate_red:icons.cate}}'></image><text class='label'>活动列表</text></navigator>
+    <navigator class='nav-item' open-type='redirect' hoverClass='none' url='/application/pages/groups/orders/index'>
+      <image class='icon' src='{{icons.order}}'></image>
+      <view class='label'>我的订单</view>
+    </navigator>
+    <navigator class='nav-item' open-type='redirect' hoverClass='none' url='/application/pages/groups/team/index'>
+      <image class='icon' src='{{icons.people}}'></image>
+      <view class='label'>我的团</view>
+    </navigator>
+  </view>
+</view>
+</view>

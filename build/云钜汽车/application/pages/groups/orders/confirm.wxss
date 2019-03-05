@@ -1,0 +1,11 @@
+body{ background:#f7f7f7; }
+.nav{ width:100%; height:90rpx; display:-webkit-flex; display:flex; -webkit-flex-direction:row; flex-direction:row; background: #fff }
+.default{ line-height:90rpx; text-align:center; -webkit-flex:1; flex:1;color:#666; font-size:32rpx; }
+.red{ line-height:90rpx; text-align:center; color:#ef4f4f; -webkit-flex:1; flex:1; font-size:32rpx; border-bottom: 2px solid #ef4f4f }
+.switch{ float: right; zoom: 90%; overflow: hidden }
+.btn{ padding: 0 60rpx; border-radius: 0; height: 100rpx; line-height: 100rpx; margin: 0; }
+.fui-list-inner .sure_subtitle { line-height:36rpx; position:relative; font-size:26rpx; color:#444; }
+.fui-number{ height:40rpx; width: 130rpx; }
+.minus,.plus{ width: 40rpx; height: 40rpx; font-size: 40rpx; line-height: 40rpx; }
+.fui-list-angle { margin-right:0; text-align:right; }
+.fui-cell-text .shop_name{ font-size: 33rpx; }

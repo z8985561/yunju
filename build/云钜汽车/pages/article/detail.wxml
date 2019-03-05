@@ -1,0 +1,5 @@
+  <view style='text-align:center;'>{{article.article_title}}</view>
+  <import src="/utils/wxParse/wxParse.wxml" />
+  <view class='wxParse' style='margin:0px;text-align:center;'>
+    <template is='wxParse' data='{{ wxParseData:htmlcontent.nodes}}' />
+  </view>

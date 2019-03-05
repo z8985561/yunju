@@ -1,0 +1,183 @@
+<view class="page">
+    <view class="fui-content">
+        <view class="share_body">
+            <view class="share_main">
+                <view class="share_head_img">
+                    <image mode='widthFix' class='share_head_img_style' src="{{approot}}/template/mobile/default/static/sendticket/img/bg7s.png">
+                    </image>
+                </view>
+                <view class="content_bg" style="background:url({{approot}}/template/mobile/default/static/sendticket/img/sbg2.png);background-size:100% 100%;">
+                <view class="share_title" style="padding-top: 0.6rem">
+                    <block wx:if="{{close}}">
+                    <span class="share_title_text" style="font-size: 0.95rem"><b>抱歉，活动已过期</b></span>
+                    </block>
+                    <block wx:else>
+                    <block wx:if="{{newCoupon&&newCoupon.length>0}}">
+                    <span class="share_title_text" style="font-size: 0.95rem"><b>优惠券已到账</b></span>
+                    </block>
+                    <block wx:else>
+                    <span class="share_title_text" style="font-size: 0.95rem"><b>你已经领取过了哦</b></span>
+                    </block>
+                    </block>
+                </view>
+                <view class="content_list">
+                    <view class="ul_style">
+                        <block wx:if="{{close}}">
+                        <view class="li_style" style="width:100%;height:10rem;">
+                            <view style="width:50%;height:100%;text-align: center;font-size: 0.65rem;color:#999;margin:0 auto;padding-top: 1rem;padding-bottom:1rem">
+                                <image mode='widthFix' src="{{approot}}/template/mobile/default/static/sendticket/img/overdue.png" ></image>
+                            </view>
+                        </view>
+                        </block>
+                        <block wx:else>
+                        <block wx:if="{{newCoupon&&newCoupon.length>0}}">
+                        <block wx:for="{{newCoupon}}" wx:for-item='item' wx:for-index='index' wx:key="*this">
+                        <block wx:if="{{item.backtype}}==0">
+                            <view class="li_style">
+                                <view class="conpou">
+                                    <view class="list_content1 text-center">
+                                        <view class='div1_style' style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#CCA865;line-height: 2rem;height:60%;">
+                                            <text style="font-size: 1.5rem;">{{item.deduct}}</text><text style="font-size: 0.5rem">元</text>
+                                        </view>
+                                        <view class='div1_style' style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#A5A5A5;font-size: 0.5rem;line-height: 1.2rem;height:40%;">
+                                            <block wx:if="{{item.enough==0}}">
+                                            无金额门槛
+                                            </block>
+                                            <block wx:else>
+                                            满{{item.enough}}元可用
+                                            </block>
+                                        </view>
+                                    </view>
+                                    <view class="modify">
+                                    </view>
+                                    <view class="list_content2 text-left">
+                                        <view class='div2_style' style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#373737;font-size: 0.8rem">{{item.couponname}}</view>
+                                        <view class='div2_style' style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#8C8C8C;font-size: 0.7rem">数量：{{item.cpnum}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                        <block wx:elif="{{item.backtype}}==1">
+                            <view class="li_style">
+                                <view class="conpou">
+                                    <view class="list_content1 text-center">
+                                        <span style="font-size: 1.5rem">{{item.discount}}</span><span style="font-size: 0.5rem">折</span>
+                                    </view>
+                                    <view class="modify">
+                                    </view>
+                                    <view class="list_content2 text-left">
+                                        <view style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#373737;font-size: 0.8rem">{{item.couponname}}</view>
+                                        <view style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#8C8C8C;font-size: 0.7rem">数量：{{item.cpnum}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                        <block wx:elif="{{item.backtype}}==2">
+                            <view class="li_style">
+                                <view class="conpou">
+                                    <view class="list_content1 text-center">
+                                        <view style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#CCA865;line-height: 2rem;height:60%;">                                        <block wx:if="{{item.backmoney!=''&&item.backcredit!=''&&item.backredpack!=''}}">
+                                            <span style="font-size: 1.5rem">{{item.backredpack}}</span><span style="font-size: 0.5rem">元红包</span>
+                                            </block>
+                                            <block wx:elif="{{item.backmoney!=''&&item.backcredit!=''&&item.backredpack==''}}">
+                                            <span style="font-size: 1.5rem">{$cp['backmoney']}</span><span style="font-size: 0.5rem">余额</span>
+                                            </block>
+                                            <block wx:elif="{{item.backmoney!=''&&item.backcredit==''&&item.backredpack!=''}}">
+                                            <span style="font-size: 1.5rem">{$cp['backredpack']}</span><span style="font-size: 0.5rem">元红包</span>
+                                            </block>
+                                            <block wx:elif="{{item.backmoney==''&&item.backcredit!=''&&item.backredpack!=''}}">
+                                            <span style="font-size: 1.5rem">{{item.backredpack}}</span><span style="font-size: 0.5rem">元红包</span>
+                                            </block>
+                                            <block wx:elif="{{item.backmoney==''&&item.backcredit==''&&item.backredpack==''}}">
+                                            <span style="font-size: 1.5rem">{{item.backredpack}}</span><span style="font-size: 0.5rem">元红包</span>
+                                            </block>
+                                            <block wx:elif="{{item.backmoney==''&&item.backcredit!=''&&item.backredpack==''}}">
+                                            <span style="font-size: 1.5rem">{{item.backcredit}}</span><span style="font-size: 0.5rem">{{credittext}}</span>
+                                           </block>
+                                             <block wx:elif="{{item.backmoney!=''&&item.backcredit==''&&item.backredpack==''}}">
+                                            <span style="font-size: 1.5rem">{{item.backmoney}}</span><span style="font-size: 0.5rem">余额</span>
+                                            </block>
+                                        </view>
+                                        <view style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#A5A5A5;font-size: 0.5rem;line-height: 1.2rem;height:40%;">
+                                            <block wx:if="{{item.enough==0}}">
+                                          
+                                            无金额门槛
+                                            </block>
+                                            <block wx:else>
+                                            满{{item.enough}}元可用                                                            </block>
+                                        </view>
+                                    </view>
+                                    <view class="modify">
+                                    </view>
+                                    <view class="list_content2 text-left">
+                                        <view style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#373737;font-size: 0.8rem">{{item.couponname}}</view>
+                                        <view style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#8C8C8C;font-size: 0.7rem">数量：{{item.cpnum}}</view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                        </block>
+                        </block>
+                        <block wx:else>
+                        <view class='li_style' style="width:100%;height:1rem;">
+                            <view style="width:100%;height:25%;text-align: center;line-height: 1rem;font-size: 0.65rem;color:#999">优惠券已放入你的账户</view>
+                        </view>
+                        <view class='li_style' style="width:100%;height:4.2rem;">
+                            <view style="width:50%;height:100%;text-align: center;font-size: 0.65rem;color:#999;margin:0 auto;margin-top: 1rem">
+                                <image class='share_head_img_style' src="{{approot}}/template/mobile/default/static/sendticket/img/get.png" alt="" width="100%" height="100%"></image>
+                            </view>
+                        </view>
+                        </block>
+                        </block>
+                    </view>
+                    <block wx:if="{{close}}">
+                     <view class="share_button" bindtap='jumptoindex'>
+                            <view style='background:url({{approot}}/template/mobile/default/static/sendticket/img/sbtn.png);background-size:100% 100%;' class="button_c text-center js-clip" data-href="">
+                                返回首页
+                            </view>
+                    </view>
+                    </block>
+                    <block wx:else>
+                    <view class="share_button" bindtap='jumptocoupon'>
+                            <view style='background:url({{approot}}/template/mobile/default/static/sendticket/img/sbtn.png);background-size:100% 100%;' class="button_c text-center js-clip" data-href="">
+                                立即查看
+                            </view>
+                    </view>
+                    </block>
+                </view>
+                    </view>
+                <view class="share_firend">
+                    <view class="firend_title">
+                        <view class="q_t" style="width:100%;">
+                            <image mode='widthFix'  class='share_head_img_style' src="{{approot}}/template/mobile/default/static/sendticket/img/circle.png" style="width:1rem;margin-top: 0.45rem"></image>
+                            <text style="margin-left:0.2rem;margin-right: 0.2rem">看看谁领了券</text>
+                            <image mode='widthFix' class='share_head_img_style' src="{{approot}}/template/mobile/default/static/sendticket/img/circle.png" style="width:1rem;margin-top: 0.45rem"></image>
+                        </view>
+                    </view>
+                    <view class="firend_contents">
+                        <view class="ul_style">
+                            <block wx:if="{{firendlist&&firendlist.length>0}}">
+                            <block wx:for="{{firendlist}}" wx:for-item="item">
+                            <view class="li_style">
+                                <view class="firend_contents_logo">
+                                    <image src="{{item.headimg}}" alt="" width="100%" height="100%"></image>
+                                </view>
+                                <view class="firend_contents_info">
+                                    <view style="width:100%;height:50%;line-height: 2rem">
+                                        <span style="float:left;max-width:45%;height:100%;font-size: 0.75rem;color:#ffeb43;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{item.nickname}}</span>
+                                        <span style="width:50%;height:100%;color:#FCE3E4;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding-left: 0.4rem">{{item.gettime}}</span>
+                                    </view>
+                                    <view style="width:100%;height:50%;color:#FCE3E4;font-size: 0.65rem;line-height: 1.6rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" class="motto" value="{{item.did}}">{{item.text}}</view>
+                                </view>
+                            </view>
+                            </block>
+                            </block>
+                        </view>
+                    </view>
+                </view>
+                <view class="bottom" style="text-align: center;line-height: 4rem">
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

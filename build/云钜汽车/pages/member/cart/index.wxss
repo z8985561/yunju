@@ -1,0 +1,14 @@
+@import "/__wuBaseWxss__/2.wxss";
+@import "../../index/openauth.wxss";
+.fui-cell-group{ margin-top: 40rpx; border: none; }
+.cartlist{ margin-top: -2rpx; }
+.price{ text-align: right; display: inline-block; width: 100%; color: #999; font-size: 26rpx; }
+.left{ left: -100rpx }
+wx-checkbox{ padding-right:20rpx }
+.empty{ padding:260rpx 150rpx; }
+.light{ height: 260rpx; width: 240rpx }
+.text-cancel{ padding-top:60rpx; font-size: 34rpx; }
+.fui-list-inner .car_subtitle { position:relative; font-size:26rpx; color:#444; }
+.fui-number{ height:40rpx; width: 130rpx; }
+.minus,.plus{ width: 40rpx; height: 40rpx; font-size: 40rpx; line-height: 40rpx; }
+.fui-list-angle { margin-right:0; }

@@ -1,0 +1,83 @@
+<!--作者QQ:1026770372-->
+<view class="page header-sort navbar">
+  <view class="fui-header">
+    <view class="searchbar">
+     <icon size="12" type="search"></icon>
+      <input name="search" bindconfirm="bindSearch" bindfocus="bindFocus" bindinput="bindInput" focus="{{focusin}}" placeholder="输入关键字进行搜索" value="{{keyword}}" /> 
+    </view>
+    <image class="icon" bindtap="changeMode" src="/static/images/icon/viewlist.png" wx:if="{{!fromsearch}}"></image>
+    <view class="cancel" bindtap="bindback" wx:if="{{fromsearch}}">取消</view>
+  </view>
+  <view class="sort">
+    <view bindtap="showFilter" class="item">
+      <view class="text">
+      <block wx:if="{{selcatename}}">{{selcatename}}</block>
+      <block wx:else>全部商户分类</block>
+        <image class="icon small" src="/pages/changce/images/sjx.png" style='width:0.5rem;height:0.5rem;'></image>
+      </view>
+    </view>
+    <view bindtap="showNear" class="item">
+      <view class="text">
+      <block wx:if="{{selrangename}}">{{selrangename}}</block>
+      <block wx:else>按距离</block>
+        <image class="icon small" src="/pages/changce/images/sjx.png" style='width:0.5rem;height:0.5rem;'></image>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{isFilterShow}}" class="screen in">
+    <block>
+      <view class="title" bindtap="bindCategoryEvents" data-id="" data-title="">选择商户分类</view>
+      <view class="cate" data-catlevel="" style='height:125px;'>
+        <view class="item">
+          <block wx:for="{{cates}}">
+            <view>
+              <nav data-level="1" bindtap="bindCategoryEvents" class="{{category_parent_selected == item.id ? 'on' : ''}}" data-id="{{item.id}}" data-title="{{item.catename}}">{{item.catename}}</nav>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+    <!--view class="btns">
+      <view class="cancel" bindtap="bindFilterCancel">取消筛选</view>
+      <view class="confirm" bindtap="bindFilterSubmit">确认</view>
+    </view-->
+  </view>
+  <view wx:if="{{isNearShow}}" class="screen in">
+    <block>
+      <view class="title" bindtap="bindDisEvents" data-id="" data-title="">选择距离</view>
+      <view class="cate" data-catlevel="" style='height:125px;'>
+        <view class="item">
+          <block wx:for="{{disopt}}">
+            <view>
+              <nav bindtap="bindDisEvents" class="{{range == item.range ? 'on' : ''}}" data-id="{{item.range}}" data-title="{{item.title}}">{{item.title}}</nav>
+            </view>
+          </block>
+        </view>
+      </view>
+    </block>
+  </view>
+  <block wx:if='{{total <= 0 && !loading}}'>
+    <view class='fui-loading empty'>
+      <view class='text'>暂时没有搜索到任何店铺</view>
+    </view>
+  </block>
+  <view class="fui-list-group cartlist" style='margin-top:0px;'>
+    <navigator class="fui-list noclick" wx:for="{{list}}" url="/pages/changce/merch/detail?id={{item.id}}">
+      <view class="fui-list-media">
+          <image wx:if="{{item.logo}}" class="round" src="{{item.logo}}"></image>
+          <image wx:else class="round" src="/static/images/noface.png"></image>
+      </view>
+      <view class="fui-list-inner">
+          <view class="subtitle">{{item.merchname}}</view>
+          <view class="text cart-option">
+            <view class="choose-option">主营：{{item.salecate}}</view>
+            <view class="choose-option">{{item.address}}<text wx:if="{{item.disname}}"> ({{item.disname}})</text></view>
+          </view>
+      </view>
+      <view class="fui-list-angle">
+        <text class="btn">进店逛逛</text>
+      </view>
+    </navigator>
+  </view>
+      
+</view>

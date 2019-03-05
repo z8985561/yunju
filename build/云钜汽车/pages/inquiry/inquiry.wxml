@@ -1,0 +1,32 @@
+<!--pages/inquiry/inquiry.wxml-->
+<view class='tips'>向商家询问最低价，商家会及时回复</view>
+<view class='cart'>
+  <image src='{{cart.imgUrl}}' mode='widthFix'></image>
+  <view>{{cart.title}}</view>
+</view>
+<form bindsubmit="formSubmit">
+  <van-cell-group>
+    <van-field value="{{ username }}" label="姓名" name="name" placeholder="请输入姓名" />
+    <van-field value="{{ phone }}" label="手机号" name="phone" placeholder="请输入手机号" />
+    <van-field value="{{ phone }}" label="城市" name="address" placeholder="请输入城市" border="{{ false }}" />
+  </van-cell-group>
+  <view class='bar'></view>
+  <view class='btn-10'>
+    <button class='submit' form-type="submit" size="large">询问底价</button>
+    <!-- <van-button form-type="submit" size="large">询问底价</van-button> -->
+    <view class='cc fz-24 text-center' style='margin-top:20rpx;'>提交后经销商会及时回复，您的信息将得到严格保护</view>
+  </view>
+</form>
+<view style='background-color:#fff;'>
+  <view class='tips' style='text-align:left;'>选择询价经销商（可多选）</view>
+  <block wx:for="{{merchantList}}" wx:key="index">
+  <view class='merchan'>
+    <van-checkbox value="{{ item.checked }}" data-index="{{index}}" bind:change="onChange" checked-color="#e44a41"></van-checkbox>
+    <view>
+      <view class='fz-30'>{{item.name}}</view>
+      <view class='fz-24 c9'>{{item.adress}}</view>
+    </view>
+    <view class='price'>{{item.price}}<text class='fz-22'> 万起</text></view>
+  </view>
+  </block>
+</view>

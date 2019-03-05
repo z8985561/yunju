@@ -1,0 +1,41 @@
+<view class="page">
+    <view class="fui-content">
+        <view class="share_body">
+            <view class="share_main">
+                <view class="share_head_img">
+                    <image mode="widthFix" class='share_head_img_style' src="{{approot}}/template/mobile/default/static/sendticket/img/bg7s.png" alt="">
+                    </image>
+                </view>
+                <view class='content_bg' style="background:url({{approot}}/template/mobile/default/static/sendticket/img/sbg2.png);background-size:100% 100%;">
+                    <view class="share_title" style="padding-top: 0.6rem">
+                        <span class="share_title_text" style="font-size: 0.95rem;"><b>您有{{num}}张优惠券待领取</b></span>
+                    </view>
+                    <view class="content_list">
+                        <view class="ul_style">
+                            <view class='li_style' style="width:100%;height:1rem;padding-top: 1rem">
+                                <view style="width:100%;height:25%;text-align: center;line-height: 1rem;font-size: 0.8rem;color:#666">传递本页面给好友，与好友共享礼包</view>
+                            </view>
+                            <view class='li_style' style="width:100%;height:11.2rem;padding-bottom: 3rem;padding-top:1rem">
+                                <view style="width:70%;height:100%;text-align: center;font-size: 0.65rem;color:#999;margin:0 auto;margin-top: 2rem;">
+                                    <image mode='widthFix' src="{{approot}}/template/mobile/default/static/sendticket/img/share.png" class='share_head_img_style' alt=""></image>
+                                </view>
+                            </view>
+                        </view>
+                        <view class="share_button" >
+                                <view class="button_c text-center js-clip" data-href="" style='background:url({{approot}}/template/mobile/default/static/sendticket/img/sbtn.png);background-size:100% 100%;'>
+                                    立即传递
+                                </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="bottom" style="text-align: center;line-height: 4rem">
+                   
+                </view>
+            </view>
+        </view>
+
+        <view class="share_img">
+            <image mode='widthFix' src="{{approot}}/template/mobile/default/static/sendticket/img/guide_1.png" class='share_head_img_style' alt=""></image>
+        </view>
+    </view>
+</view>

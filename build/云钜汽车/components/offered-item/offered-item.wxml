@@ -1,0 +1,37 @@
+<!--components/offered-item/offered-item.wxml-->
+<navigator class='offered-item' hover-class="none" url="{{offeredItem.url}}">
+  <view class='title'>
+    <view class='left'>
+      <text>距结束：</text>
+      <text class='back'>{{time.days}}</text>
+      <text>：</text>
+      <text class='back'>{{time.hour}}</text>
+      <text>：</text>
+      <text class='back'>{{time.minute}}</text>
+      <text>：</text>
+      <text class='back'>{{time.second}}</text>
+    </view>
+    <view class='right'>{{offeredItem.peopleNum}}人已报名</view>
+  </view>
+  <view class='content'>
+    <image class='pic' src='/img/car-1.jpg' mode='widthFix'></image>
+    <view class='des'>
+      <view class='name'>
+        <image class='brand' src='/img/honda.png' mode='widthFix'></image>
+        <text>{{offeredItem.cartName}}</text>
+      </view>
+      <view style='font-size:20rpx;font-weight:700;'>指导价</view>
+      <view class='price'>￥{{offeredItem.floorPrice}}-{{offeredItem.topPrice}}万</view>
+      <view class='btn'>
+        <text>去参团</text>
+        <van-icon name="arrow" style='vertical-align: middle;' />
+      </view>
+    </view>
+  </view>
+  <view class="subsidy" wx:if="{{offeredItem.subsidy}}">
+    <view class='subsidy-tip'>
+      <image src='/img/lightning.png'></image><text>闪购</text>
+    </view>
+    <view style='font-size:24rpx;color:red;margin-left:30rpx;'>置换补贴{{offeredItem.subsidy}}元</view>
+  </view>
+</navigator>

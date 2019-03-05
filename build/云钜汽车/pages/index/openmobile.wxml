@@ -1,0 +1,8 @@
+<view class="inner">
+    <view class="title">登录后。账号更安全</view>
+    <view class="subtitle">微信一键登录，安全又方便~</view>
+    <view class="model-btns">
+        <view bindtap="cancelmobileclick" class="cancel">取消</view>
+        <button style='background: #fff;font-size: 30rpx;color: #50b33c;line-height: 100rpx;width: 50%;' bindgetphonenumber="phoneinfo" bindtap="confirmobilemclick" openType="getPhoneNumber">点击登录</button>
+    </view>
+</view>

@@ -1,0 +1,88 @@
+<view class='fui-page creditshop-detail-page'>
+  <view class='fui-content navbar'>
+    <view class="lynn_opengroups_head fui-list" style="padding:36rpx;">
+      <navigator url="{php echo mobileUrl('groups/goods', array('id'=>$goods['id']))}" class="lynn_index_list_a fui-list-media">
+        <image src="{{goods.thumb}}" alt="{{$goods.title}}">
+        </image>
+      </navigator>
+    </view>
+    <view class="fui-list-inner lynn_opengroups_head_goods">
+      <view class="groups_title">
+        <view class="groups_title-content">
+          <view class="groups_type">{{goods.groupnum}}人团</view> {{goods.title}}</view>
+      </view>
+      <view class="groups_price">
+        <view class="fl">
+          ¥
+          <text>{{goods.groupsprice}}/</text>
+          <view style="display:inline-block" wx:if="{{goods.units}}">
+            {{goods.goodsnum}}{{goods.units}}
+          </view>
+          <view style="display:inline-block" wx:else>
+            1件
+          </view>
+        </view>
+        <text class="fr">
+					</text>
+        <view style="clear:both;"></view>
+      </view>
+    </view>
+
+    <view class="lynn_opengroups_invitation row">
+      <view class="data">
+        <view class="text1">已有
+          <text class="total">{{goods.fightnum}}</text> 人参团
+          <navigator class="step_more" url="/application/pages/groups/goods/rules">查看拼团规则 ></navigator>
+        </view>
+      </view>
+      <navigator url="/application/pages/groups/goods/fightGroups?id={{goods.id}}" class="lynn_fightgroups_btn" data-nocache="true">我要参团</navigator>
+      <view bindtap='goodsCheckGroups' class="lynn_opengroups_btn btn-groups">我要开团</view>
+    </view>
+    <view class="lynn_more_groups">
+      <view class="othergroups">
+        <text>
+					<text></text>
+        <text>更多好团</text>
+        </text>
+      </view>
+      <view class="lynn_more_groups_list row">
+        <block wx:for='{{teams}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view class="lynn_more_groups_single">
+            <view style="padding:10rpx;">
+              <navigator url="/application/pages/groups/goods/index?id={{item.id}}" class="lynn_more_groups_list_a">
+                <image src="{{item.thumb}}" alt="{{item.title}}">
+                </image>
+              </navigator>
+              <view style="background:#fff">
+                <text class="groups_good_title">{{item.title}}</text>
+                <view class="lynn_more_groups_list_p row">
+                  <text class="other_price">¥ {{item.groupsprice}}</text>
+                  <text class='original'>¥{{item.price}}</text>
+                  <!-- <text class="fr">{{item.fightnum}}人参团</text> -->
+                </view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='fui-navbar'>
+  <navigator hoverClass='none' url='/application/pages/groups/index/index' class='nav-item {{route != "home" || "active"}}'>
+    <image class='icon' src='{{route == "home"?icons.home_red:icons.home}}'></image>
+    <text class='label'>拼团首页</text>
+  </navigator>
+  <navigator hoverClass='none' class='nav-item {{route != "category" || active}}' url='/application/pages/groups/caregory/index'>
+    <image class='icon' src='{{route == "category"?icons.cate_red:icons.cate}}'></image>
+    <text class='label'>活动列表</text>
+  </navigator>
+  <navigator class='nav-item' hoverClass='none' url='/application/pages/groups/orders/index'>
+    <image class='icon' src='{{icons.order}}'></image>
+    <view class='label'>我的订单</view>
+  </navigator>
+  <navigator class='nav-item' hoverClass='none' url='/application/pages/groups/team/index'>
+    <image class='icon' src='{{icons.people}}'></image>
+    <view class='label'>我的团</view>
+  </navigator>
+</view>

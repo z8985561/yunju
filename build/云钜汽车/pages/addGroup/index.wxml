@@ -1,0 +1,245 @@
+<scroll-view scroll-y style='height:{{seriesScrollHeight}}px;' bindscroll="bindscroll" upper-threshold="150" bindscrolltoupper="toupper" lower-threshold="188" bindscrolltolower="scrolltolower">
+  <!-- 顶部轮播图 -->
+  <swiper class='banner-box' wx:if="{{is_show}}" indicator-dots autoplay circular>
+    <block wx:for="{{bannerList}}" wx:for-index="ids" wx:key>
+      <navigator url='{{bannerUrl[ids]}}'>
+        <swiper-item>
+          <image src='{{item}}'></image>
+        </swiper-item>
+      </navigator>
+    </block>
+  </swiper>
+  <!-- 顶部轮播图结束 -->
+  <!-- 中部条件筛选栏 -->
+  <view class='content-tabbar {{tabbar}}' style='{{(classifyTitle || seriesName)?"height:90rpx":""}}'>
+    <view class='tabbar-top'>
+      <view bindtap='select_show' data-type="series">
+        <text>{{seriesName?seriesName:'选主题'}}</text>
+        <image src='../../images/icon/sanjiaod.png'></image>
+      </view>
+      <view bindtap='select_show' data-type="classify">
+        <text>{{classifyTitle?classifyTitle:'选主题'}}</text>
+        <image src='../../images/icon/sanjiaod.png'></image>
+      </view>
+      <view wx:if="{{classifyTitle||seriesName}}" class='reset-box'>
+        <view bindtap='reset_select' class='reset-select'>重置</view>
+      </view>
+    </view>
+    <view class='tabbar-bottom' hidden="{{classifyTitle||seriesName}}">
+      <block wx:for="{{nowThemeList}}" wx:key>
+        <view class='{{themeId != item.id || "active-theme"}}' bindtap='select_theme' data-id="{{item.id}}">
+          <text>{{item.name}}</text>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 中部条件筛选栏结束 -->
+  <!-- 加群列表 -->
+  <view class='content-box'>
+    <block wx:for="{{nowGroupList}}" wx:key>
+      <view class='content-item'>
+        <view class='item-left'>
+          <image src='{{item.avatar}}'></image>
+        </view>
+        <view class='item-mid'>
+          <view>
+            <text class='mid-title'>{{item.name}}</text>
+            <text class='mid-describe'>{{item.describe}}</text>
+          </view>
+        </view>
+        <view class='item-right'>
+          <view bindtap='show_addgroup' data-id="{{item.id}}" data-name="{{item.name}}">
+            <text>+加群</text>
+          </view>
+        </view>
+      </view>
+    </block>
+    <view style='height:{{noListHight}}px;text-align:center;line-height:{{noListHight}}rpx;' wx:if="{{!nowGroupList.length>0}}">暂无数据</view>
+  </view>
+  <view style='margin-top:100rpx;'></view>
+  <!-- 加群列表结束 -->
+</scroll-view>
+<!-- 模态弹窗开始 -->
+<view class='modai' wx:if="{{show}}" bindtap='close_modai'>
+  <view class='modal-body' catchtap='no_close_modal'>
+    <view class='m-body-top'>
+      <image src='https://qiche.kemanduo.cc/addgroup.png'></image>
+    </view>
+    <view class='m-body-mid'>
+      <button bindtap='check_addgroup' open-type="contact" session-from show-message-card send-message-img>
+        <image src="../../images/icon/wx.png"></image>
+        <text>马上进群</text>
+      </button>
+    </view>
+    <view class='m-body-bottom' bindcontact="check_addgroup">
+      <text>点击按钮后,请如上如图操作马上进群</text>
+    </view>
+    <view class='modai-title'>
+      <text>{{selectName}}</text>
+    </view>
+  </view>
+  <van-icon class='modai-close' bind:click="close_modai" name="close" size="30px" color="#eee" />
+</view>
+<!-- 模态弹窗结束 -->
+<!-- 选择弹窗 -->
+<view class='select-box' hidden="{{!select_show}}">
+  <view style='wdith:100%;border-bottom:1px solid #ebebeb;'>
+    <view class='select-top'>
+      <view bindtap='close_select'>
+        <text>×关闭</text>
+      </view>
+    </view>
+    <view class='select-tabbar-top'>
+      <view bindtap='select_show' data-type="series">
+        <text class='{{selectType!="series" || "active-select"}}'>选车系</text>
+        <image src='{{selectType!="series"?selectIcon.down:selectIcon.up}}'></image>
+      </view>
+      <view bindtap='select_show' data-type="classify">
+        <text class='{{selectType!="classify" || "active-select"}}'>选主题</text>
+        <image src='{{selectType!="classify"?selectIcon.down:selectIcon.up}}'></image>
+      </view>
+    </view>
+  </view>
+  <view class='select-body'>
+    <view class='select-bd-left' hidden="{{selectType!='series'}}">
+      <scroll-view scroll-y style='height:{{brandListScrollHeight}}px;' scroll-into-view="{{alpha}}">
+        <view class="alphabet">
+          <view class="alphabet-list">
+            <view wx:for="{{brandList}}" wx:key="unique" id="{{item.alphabet}}" class="section-item">
+              <view class="section-item-header">
+                {{item.alphabet}}
+              </view>
+              <view hover-class='none' wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
+                <view bindtap='selectBrand' data-id="{{cell.id}}" class="section-item-cell {{cellIndex != (item.datas.length-1) ? 'border-bottom':''}}">
+                  <image class='avater' src='{{cell.avater}}'></image>
+                  <view>
+                    <view>{{cell.name}}</view>
+                    <view class='state'>{{cell.state}}</view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class='select-bd-right' hidden="{{selectType!='classify'}}">
+      <scroll-view scroll-y style='height:{{brandListScrollHeight}}px;'>
+        <block wx:for="{{themeList}}" wx:key>
+          <view bindtap='select_classify' class='{{select_classifyId!=item.id || "active-select"}}' data-id="{{item.id}}" data-name="{{item.name}}">
+            <text>{{item.name}}</text>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+</view>
+<!-- 选择弹窗结束 -->
+<!-- 底部菜单栏 -->
+<van-tabbar active="{{ active }}" bind:change="onChange" fixed z-index="999">
+  <van-tabbar-item icon="wap-home">主页</van-tabbar-item>
+  <van-tabbar-item icon="search">搜索</van-tabbar-item>
+</van-tabbar>
+<!-- 底部菜单栏结束 -->
+<!-- 选车右侧筛选栏 -->
+<view data-id="selector" hidden="{{selectType!='series'}}" catchtouchstart="handlerAlphaTap" catchtouchmove="handlerMove" catchtouchend='handlerEnd' style='height:{{windowHeight - 120}}px;' class="alphanet-selector {{addBg?'bg':''}}">
+  <view data-ap="{{item.alphabet}}" wx:for="{{brandList}}" wx:key="unique" class="selector-one">
+    {{item.alphabet}}
+  </view>
+</view>
+<!-- 选车右侧筛选栏结束 -->
+<!-- 选车层弹窗 -->
+<view class='brand-box' hidden='{{!brand_show}}' bindtap='close_brand'>
+  <scroll-view class='brand-right' scroll-y style='height:{{seriesScrollHeight}}px'>
+    <block wx:for="{{seriesList}}" wx:key>
+      <view class='brand-item'>
+        <view class='vendor-title'>
+          <text>{{item.vendorTitle}}</text>
+        </view>
+        <block wx:for="{{item.seriesList}}" wx:key>
+          <view class='series-list' bindtap='select_series' data-id="{{item.id}}" data-name="{{item.seriesTitle}}">
+            <view class='series-left'>
+              <image src='{{item.pic_url}}'></image>
+            </view>
+            <view class='series-right'>
+              <view class='series-title'>{{item.seriesTitle}}</view>
+              <view>
+                <text class='series-miaoshu'>指导价:</text>
+                <text class='series-price'>{{item.price}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<!-- 选车层弹窗结束 -->
+<!-- 搜索页 -->
+<view class='serch-box' hidden='{{!show_serch}}'>
+<scroll-view scroll-y style='height:{{seriesScrollHeight}}px;'>
+  <view class='serch-top'>
+    <van-search value="{{ value }}" bind:search="check_search" background="#fff" field-class="serch-item" show-action="{{serchList}}" bind:clear="clearSerch" custom-class="serch-html" input-class="serch-input" bind:change="serchchange" bind:cancel="clearSerch" placeholder="搜索你感兴趣" />
+  </view>
+  <view class="serch-left" hidden='{{serchList}}'>
+    <block wx:for="{{serch_botton_list}}" wx:key>
+      <view class='serch-botton-box'>
+        <view class='serch-btn-title'>
+          <text>{{item.btnTitle}}</text>
+        </view>
+        <view class='serch-btn-body'>
+          <block wx:for="{{item.btnList}}" wx:key wx:for-item="btn">
+            <text bindtap='serchBtn' data-value="{{btn.value}}">{{btn.value}}</text>
+          </block>
+        </view>
+      </view>
+    </block>
+    <view class='serch-botton-box'>
+      <view class='serch-btn-title'>
+        <text>搜索历史</text>
+      </view>
+      <view class='serch-btn-body'>
+        <block wx:for="{{btnRecordList}}" wx:key wx:for-item="btn">
+          <text bindtap='serchBtn' data-value="{{btn}}">{{btn}}</text>
+        </block>
+      </view>
+    </view>
+    <view class='serch-botton-box' wx:if="{{!btnRecordList}}">
+      <view class='serch-btn-title'>
+        <text>暂无搜索历史</text>
+      </view>
+    </view>
+    <view class='serch-botton-box' wx:else>
+      <view class='serch-btn-title' style='text-align:center;'>
+        <text bindtap='clear_btn_record'>清空搜索历史</text>
+      </view>
+    </view>
+  </view>
+  <view class="serch-right" hidden='{{!serchList}}'>
+      <view class='serch-btn-title' style='padding:15px;'>
+        <text>共找到{{serchList.serchlen?serchList.serchlen:'0'}}个群</text>
+      </view>
+      <view class='content-box'>
+        <block wx:for="{{serchList.list}}" wx:key>
+          <view class='content-item'>
+            <view class='item-left'>
+              <image src='{{item.avatar}}'></image>
+            </view>
+            <view class='item-mid'>
+              <view>
+                <text class='mid-title'>{{item.name}}</text>
+                <text class='mid-describe'>{{item.describe}}</text>
+              </view>
+            </view>
+            <view class='item-right'>
+              <view bindtap='show_addgroup' data-id="{{item.id}}" data-name="{{item.name}}">
+                <text>+加群</text>
+              </view>
+            </view>
+          </view>
+        </block>
+      </view>
+  </view>
+  </scroll-view>
+</view>
+<!-- 搜索页结束 -->

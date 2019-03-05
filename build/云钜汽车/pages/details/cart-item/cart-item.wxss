@@ -1,0 +1,96 @@
+/* pages/details/cart-item/cart-item.wxss */
+page{
+  background-color: #f0f0f0;
+}
+.tips{
+  height: 60rpx;
+  align-items: center;
+  background-color: #eeeeee;
+  color: #bebebe;
+}
+.tips > view{
+  margin-left: 20rpx;
+}
+.cart{
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 30rpx;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+}
+.cart > image {
+  width: 200rpx;
+  height: 170rpx;
+  margin-right: 20rpx;
+}
+.cart > view{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 150rpx;
+  color: #333;
+}
+.filter{
+  display: flex;
+  justify-content: space-between;
+  padding: 30rpx 20rpx;
+  background-color: #fff;
+}
+.filter > view{
+  width: 25%;
+  text-align: center;
+  color: #999;
+  font-size: 15px;
+}
+.filter > view.on{
+  color: #e44a41;
+}
+.filter .location{
+  justify-content: center;
+  border-left: 1px solid #f0f0f0;
+  color: #556ad0;
+}
+.merchant-list{
+  padding: 0 30rpx;
+  background-color: #fff;
+}
+.merchant-list van-tag{
+  margin-right: 20rpx;
+}
+.merchant-item > view:first-child{
+  display: flex;
+  margin-bottom: 20rpx;
+}
+.merchant-item .left{
+  flex: 1;
+  margin-right: 20rpx;
+}
+.merchant-item .right{
+  width: 160rpx;
+  text-align: right;
+}
+.price{
+  font-size: 36rpx;
+  color: #e44a41;
+}
+.down{
+  font-size: 26rpx;
+  color: #69a921;
+}
+.inquire{
+  margin: 0 auto;
+  width: 45%;
+  height: 60rpx;
+  line-height: 60rpx;
+  background-color: #eef0fa;
+  border: 1px solid #c0c8ed;
+  color: #556ad0;
+  text-align: center;
+  border-radius: 5rpx;
+}
+.merchant-item{
+  padding: 30rpx 0;
+  border-bottom: 1px solid #f3f3f3;
+}

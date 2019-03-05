@@ -1,0 +1,14 @@
+/* pages/shop/about/index.wxss */
+.face image{
+height:160rpx;
+width:160rpx;
+border-radius:160rpx;
+display:block;
+}
+.title{
+  color:gray;
+}
+.fui-cell{
+  padding: 10rpx 10rpx
+}
+

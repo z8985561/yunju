@@ -1,0 +1,124 @@
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class='container'>
+  <view class='fui-page creditshop-detail-page'>
+    <view class='fui-content'>
+      <view class="swiper-container">
+        <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-dots="true" circular="true">
+          <block wx:for='{{goods.thumb_url}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+            <swiper-item style='width:100%;'>
+              <image class="slide-image" src="{{item}}" mode="aspectFit">
+              </image>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+      <view class="lynn_goods_head">
+        <view class="lynn_goods_head_title">
+          <view class="lynn_goods_groups_type">
+            <image src="/static/images/groups.png"></image>
+            <text style="padding:0rpx 18rpx;">{{goods.groupnum}}人团</text>
+          </view>
+          <view class="lynn_goods_groups_price">
+            <view>
+              <text class="group_price">¥ {{goods.groupsprice}}/<text style='font-size:26rpx;'>{{goods.goodsnum}}{{goods.units}}</text></text>
+              <text class='group_proprice'>¥ {{goods.price}}</text>
+            </view>
+            <view style="text-align:right;">
+              <text class='group_sales'>已有 {{goods.fightnum}}人参团，销量 {{goods.sales}}件</text>
+            </view>
+          </view>
+        </view>
+        <view class="lynn_goods_title">
+          <text>{{goods.title}}</text>
+          <button plain="true" open-type='share' class='lynn_goods_share'>
+            <view style="text-align:center;">
+              <image src="/static/images/ico-share-g.png" style="height:50rpx;width:50rpx;margin-top:-20rpx;"></image>
+            </view>
+            <view>分享</view>            
+          </button>
+          <!-- <view class="lynn_goods_share">
+            <view style="text-align:center;">
+              <image src="/static/images/ico-share-g.png" style="height:50rpx;width:50rpx;margin-top:-20rpx;"></image>
+            </view>
+            分享
+          </view> -->
+        </view>
+        <!-- <view class="lynn_goods_head_subtitle">
+          {{goods.description}}
+        </view> -->
+        <block wx:if="{{goods.isdiscount!=0}}">
+          <view class="lynn_goods_discount">
+            【团长优惠
+            <span> ¥
+              <block wx:if="{{goods.headstype==0}}">
+                {{goods.headsmoney}}
+              </block>
+              <block wx:if="{{goods.headstype==1}}">
+                {{goods.headsdiscount}}折
+              </block>
+            </span>】
+          </view>
+        </block>
+      </view>
+      <navigator>
+        <view class="lynn_goods_invitation">
+          <view class="groups_rule_title section">活动说明</view>
+          <view class="groups_rule_process">
+            <view class="groups_proccess" style="flex:1;text-align:center;">
+              <view>
+                <image src="/static/images/group_pay.png"></image>
+              </view>
+              <text class="content" style="color:red">选择商品支付开团</text>
+            </view>
+            <view class="groups_proccess" style="flex:1;text-align:center;">
+              <view>
+                <image src="/static/images/group_wait.png"></image>
+              </view>
+              <text class="content">邀请好友支付参团</text>
+            </view>
+            <view class="groups_proccess" style="flex:1;text-align:center;">
+              <view>
+                <image src="/static/images/group_success.png"></image>
+              </view>
+              <text class="content">达到人数拼团成功</text>
+            </view>
+          </view>
+          <view class="groups_rule_content">
+            <navigator url='/application/pages/groups/goods/rules'>
+              详细规则
+            </navigator>
+          </view>
+        </view>
+      </navigator>
+      <view class="lynn_goods_content">
+        <view class="lynn_goods_content_title">
+          <view>图文详情</view>
+        </view>
+        <view class='wxParse'>
+          <template is='wxParse' data='{{ wxParseData:wxParseData.nodes }}' />
+        </view>
+      </view>
+      <view style="height:50px;"></view>
+    </view>
+    <view class="fui-navbar bordert" style="z-index:100;padding:0;">
+      <view class="nav-item homeabtn">
+        <navigator open-type='redirect' url='/application/pages/groups/index/index'>
+          <image class='icon' src='{{icons.home}}'></image>
+          <text class='label'>拼团首页</text>
+        </navigator>
+      </view>
+      <view class="lynn_goods_btn lynn_btn_waring btn-single" href="javascript:void(0);" bindtap='goodsCheckSingle' style="width:40%"  wx:if="{{goods.single!=0}}">
+        <view>
+          <text>¥<text>{{goods.singleprice}}</text></text>
+        </view>
+        <view>单独购买</view>
+      </view>
+      <navigator url='/application/pages/groups/goods/openGroups?id={{goods.id}}&frommyshop=1'>
+        <view class="lynn_goods_btn lynn_btn_danger" data-nocache="true" style="width:{{goods.single!=0?'39%':'79%'}}">
+          <view>¥{{goods.groupsprice}}</view>
+          <view>开始拼团</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

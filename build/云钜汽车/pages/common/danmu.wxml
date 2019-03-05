@@ -1,0 +1,5 @@
+<view class="fui-danmu {{displayshow}}" style="display:{{displaycss}}">
+	<image class="thumb" mode='widthFix' src="{{headimgurl?headimgurl:'https://s100.kemanduo.cc/addons/ewei_shopv2/static/images/nopic100.jpg'}}"></image>
+	<text class="text">{{showtext}}</text>
+	<text class="time">{{showtime}}</text>
+</view>

@@ -1,0 +1,56 @@
+<!--pages/details/cart-item/cart-item.wxml-->
+<view class='flex plr-30 tips'>
+  <van-icon name="info" color='#bebebe' />
+  <view class='fz-24'>全国最低报价为{{tips.lowestQuotation}}万，经销商位于
+    <text>{{tips.city}}</text>
+  </view>
+</view>
+
+<navigator url='/pages/details/cart-param/cart-param?id={{cart.id}}' class='cart'>
+  <image src='{{cart.imgUrl}}'></image>
+  <view>
+    <view>{{cart.title}}</view>
+    <view>
+      <text style='color:red;'>{{cart.floorPrice}}万 </text>
+      <text class='text-line fz-24' style='color:#b6b6b6;'>{{cart.oldPrice}}万</text>
+    </view>
+  </view>
+  <van-icon name="arrow" color='#bebebe' size="30px" />
+</navigator>
+
+<view class='filter'>
+  <view class='{{active== 0 ? "on":""}}' bindtap='onTabble' data-active="0">询价最多</view>
+  <view class='{{active== 1 ? "on":""}}' bindtap='onTabble' data-active="1">优惠最大</view>
+  <view class='{{active== 2 ? "on":""}}' bindtap='onTabble' data-active="2">离我最近</view>
+  <view class='location flex'>
+    <view>广州</view>
+    <van-icon name="location-o" color='#556ad0' custom-style="vertical-align:middle;" size='15px' />
+  </view>
+</view>
+
+<view class='merchant-list mb-150'>
+  <block wx:for="{{merchantList}}" wx:key="index">
+    <view class='merchant-item'>
+      <view>
+        <view class='left'>
+          <view class='fz-34'>{{item.name}}</view>
+          <view class='fz-24'>{{item.adress}}</view>
+          <view>
+            <van-tag plain>{{item.distance}}km</van-tag>
+            <van-tag plain>{{item.salesArea}}</van-tag>
+          </view>
+        </view>
+        <view class='right'>
+          <view class='price'>{{item.price}}万</view>
+          <view class='down' wx:if="{{item.preferential}}">↓ 直降{{item.preferential}}万</view>
+        </view>
+      </view>
+      <navigator url='/pages/inquiry/inquiry?id={{cart.id}}' class='inquire'>询底价</navigator>
+    </view>
+  </block>
+</view>
+<van-goods-action>
+  <van-goods-action-icon icon="star-o" text="收藏" bind:click="onClickIcon" />
+  <van-goods-action-icon icon="share" text="分享" open-type="share" />
+  <van-goods-action-button text="询底价" url="/pages/inquiry/inquiry?id={{cart.id}}'" />
+</van-goods-action>

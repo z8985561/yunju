@@ -1,0 +1,51 @@
+
+<view class='page' >
+  <view class='top-movie'>
+      <video  id="video" enable-danmu="1" danmu-btn autoplay bindfullscreenchange="showinput" danmu-list="{{danmuList}}" page-gesture="{{false}}" poster="{{item.img}}" src='{{item.url}}' class='video'></video>
+    <!-- <button>111<image bindtap='zhuanfa' class='movie-zhuanfa' src='../../images/icon/zhuanfa.png'></image></button> -->
+  </view>
+  <view class='bottom-discuss'>
+    <view class='discuss-title' ><text>全部评论</text><text wx:if="{{discussTotal>0}}">({{discussTotal}})</text></view>
+    <scroll-view bindscrolltolower="scrolltolower" scroll-y style='height:{{height}}px' scroll-into-view="id{{idx}}">
+    <block wx:for="{{discuss}}" wx:for-item='discuss' wx:for-index="ids" wx:key>
+      <view id='id{{ids}}' class='discuss-item'>
+        <view class='item-member'>
+          <image src="{{discuss.avatar}}"></image>
+          <text>{{discuss.nickname}}</text>
+        </view>
+        <view class='item-content'>
+          <text style='margin-bottom:10px;'>{{discuss.content}}</text>
+          <block wx:for="{{discuss.child}}" wx:for-item='child' wx:key>
+          <view class='child-item' bindtap='tapChild' data-name="{{child.nickname}}" data-index="{{ids}}" data-id="{{discuss.id}}" >
+            <image class='child-image' src='{{child.avatar}}'></image>
+            <text class='child-text'>{{child.nickname}}</text>
+            <text style='font-size:12px;'>回复了 </text>
+            <text style='color:blue;font-size:12px;'>@<text style='font-size:12px;font-weight:700;color:#000;'>{{child.ynickname}}</text>
+            <text style='margin:0 5px;'>:</text>
+            <text style	="color:#000;">{{child.content}}</text>
+            </text>
+          </view> 
+           </block>
+        </view>
+       
+        <view class='item-day'>
+          <text class='day-left'>{{discuss.createtime}}</text>
+          <text class='day-right' catchtap='sendDiscuss' data-name="{{discuss.nickname}}" data-index="{{ids}}" data-id="{{discuss.id}}">回复TA</text>
+        </view>
+      </view>
+    </block>
+    <view class='no_discuss' wx:if="{{isnulldiscuss}}">
+      <view class='no_discuss_image'>
+        <image src='../../images/icon/nodiscuss.png'></image>
+      </view>
+      <view class='no_discuss_image'> 
+        <text>暂时还没有任何评论,来抢个沙发!</text>
+      </view>
+    </view>
+    </scroll-view>
+  </view>
+</view>
+<view class='send_content' wx:if="{{showScreen}}">
+  <textarea  wx:if="{{showScreen}}" bindblur="blur" focus="{{auto_focus}}" fixed="true" class='send_textarea' bindinput="input" placeholder-class="placeholder-class" value="{{content}}" placeholder="{{showScreen?'说说你的看法':''}}" />
+  <view bindtap='send_submit' data-id="{{sendId}}" class='send_text'>发表</view>  
+</view>

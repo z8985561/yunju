@@ -1,0 +1,34 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='page'>
+    <block wx:if='{{list.length > 0}}'>
+      <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+        <view class='fui-list-group'>
+          <view class='fui-list address-item'>
+            <view class='fui-list-media' data-index='{{index}}' bindtap='select'>
+              <radio color='#fd5454' checked='{{item.isdefault > 0?1:0}}' class='zoom-70' name='default'></radio>
+            </view>
+            <view class='fui-list-inner' data-index='{{index}}' bindtap='select'>
+              <view class='title'>{{item.realname}} {{item.mobile}}</view>
+              <view class='text'>{{item.province}}{{item.city}}{{item.area}} {{item.address}}</view>
+            </view>
+            <navigator hoverClass='none' openType='redirect' class='fui-list-angle' url='/pages/member/address/post?id={{item.id}}&type=order'>
+              <image src='/static/images/icon/edit.png' class='image-48'></image>
+            </navigator>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:if='{{list.length < 1 && loaded}}'>
+      <view class='fui-loading empty'>
+        <view class='text'>没有数据</view>
+      </view>
+    </block>
+    <view class='fui-navbar'>
+      <navigator hoverClass='none' openType='redirect' class='nav-item btn btn-danger' url='/pages/member/address/post?type=order'>
+        <image class='image-48' src='/static/images/icon-white/add.png'></image><text>添加收货地址</text></navigator>
+    </view>
+  </view>
+</block>

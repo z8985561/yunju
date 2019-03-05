@@ -1,0 +1,53 @@
+<view class="page">
+  <view class='detail-hard' style="{{merch.storebg?'background-image:url('+merch.storebg+')':'background:#333333'}}">
+    <view class="fui-list noclick" style=''>
+      <view class="fui-list-media">
+          <image wx:if="{{merch.logo}}" class="round" src="{{merch.logo}}"></image>
+          <image wx:else class="round" src="/static/images/noface.png"></image>
+      </view>
+      <view class="fui-list-inner">
+          <view class="subtitle">{{merch.merchname}}</view>
+          <view class="text cart-option">
+            <view wx:if="{{merch.salecate}}" style='white-space:nowrap;' class="choose-option">主营：{{merch.salecate}}</view>
+          </view>
+      </view>
+       <view class="fui-list-media" >
+          <image class="round" bindtap='imgTap' data-src='{{merch.wxcode}}' src="{{merch.wxcode}}"></image>
+      </view>
+    </view>
+  </view>
+  <view class='detail-tab'>
+    <navigator class="{{isnew == 0 && isrecommand==0 ? 'on' : ''}}" bindtap="clickall">
+      <image src="/pages/changce/images/all.png"></image>
+      <text>全部</text>
+    </navigator>
+    <navigator class="{{isrecommand==1 ? 'on' : ''}}" bindtap="clickrec">
+      <image src="/pages/changce/images/recommand.png"></image>
+      <text>推荐</text>
+    </navigator>
+    <navigator class="{{isnew == 1 ? 'on' : ''}}" bindtap="clicknew">
+      <image src="/pages/changce/images/new.png"></image>
+      <text>新品</text>
+    </navigator>
+    <navigator url="/pages/changce/merch/intro?id={{merchid}}">
+      <image src="/pages/changce/images/shop.png"></image>
+      <text>简介</text>
+    </navigator>
+  </view>
+  <view class="fui-goods-group block">
+    <view class="fui-goods-item" wx:for="{{list}}">
+      <navigator hover-class="none" url="/pages/goods/detail/index?id={{item.id}}">
+        <view class="image" style="background-image:url({{item.thumb}})"></view>
+      </navigator>
+      <view class="detail">
+        <navigator hover-class="none" url="/pages/goods/detail/index?id={{item.id}}">
+          <view class="name"> {{item.title}} </view>
+        </navigator>
+        <view class="price">
+          <view class="text">￥{{item.minprice}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!--include src='/pages/common/menu.wxml' /-->
+</view>

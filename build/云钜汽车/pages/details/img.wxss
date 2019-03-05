@@ -1,0 +1,107 @@
+/* pages/details/img.wxss */
+page{
+  background: #fff;
+}
+.view-box{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.content{
+  position: fixed;
+  top: 49px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.van-col{
+ padding: 5px 0;
+}
+.img-item image{
+  width: 100%;
+  /* height: 111.66px;  */
+  height:223.32rpx;
+}
+.image-modai-box{
+  background: #000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top:0;
+  bottom:0;
+  left: 0;
+  margin: 0;
+  z-index: 999;
+
+}
+.close-modai{
+  font-size: 34px;
+  color:#eee;
+  position: absolute;
+  right:10px;
+  top:0px;
+}
+.modai-swiper{
+  width:100%;
+  height: 70%;
+  margin-top: 160rpx;
+}
+.swiper-index text{
+  font-size: 30rpx;
+  color:#fff;
+}
+.modai-swiper{
+  position: relative;
+}
+.swiper-text{
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  left:0;
+  right: 0;
+  bottom: 120rpx;
+  margin: 0 auto;
+}
+.swiper-text text{
+  font-size: 30rpx;
+  color:#fff;
+}
+.modai-swiper image{
+  width:100vw;
+  max-height: 640rpx;
+}
+.swiper-index{
+  width:100%;
+  text-align: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top:0;
+  z-index: 1;
+  margin: 0 auto;
+}
+.tarbar{
+  width:100%;
+  height: 80rpx;
+  position: fixed;
+  left:0;
+  bottom: 0;
+  background: #292929;
+  
+}
+.tarbar text{
+  display: inline-block;
+  height: 100%;
+  width:20%;
+  line-height: 80rpx;
+  text-align: center;
+  color:#666;
+  font-size:24rpx;
+  
+}
+.type{
+  color:#fff !important;
+  font-size:30rpx !important;
+}

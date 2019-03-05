@@ -1,0 +1,9 @@
+@import "../../common/city-picker.wxss";
+wx-checkbox-group wx-text { padding-right: 15rpx; }
+.picker-group { display: -webkit-flex; display: flex; }
+.picker-group wx-picker { width: 40%; }
+.btn{ font-size: 32rpx }
+.wait{ text-align: center }
+.wait wx-image{ width: 220rpx; height:220rpx; margin: 50rpx 0 }
+.wait wx-view{ margin: 20rpx; color:#666 }
+

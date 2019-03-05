@@ -1,0 +1,77 @@
+/* pages/inquiry/inquiry.wxss */
+.pages{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 20rpx;
+  background-color: rgb(242, 242, 242);
+}
+.bar{
+  border-top: 20rpx solid rgb(242, 242, 242);
+}
+.btn-10{
+  padding: 10rpx 50rpx;
+  background-color: #fff;
+}
+.footer-nav{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  height: 70rpx;
+  border-top: 1px solid rgb(217, 217, 217);
+  background-color: #fff;
+  text-align: center;
+  font-size: 30rpx;
+}
+.footer-nav navigator{
+  width: 33.33%;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-left: 1px solid rgb(217, 217, 217);
+}
+.footer-nav navigator::first-child{
+  border: none;
+}
+.tips{
+  padding:0 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #a7a7a7;
+  background-color: #eeeeee;
+}
+.cart{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.cart image{
+  width: 240rpx;
+  margin-right: 20rpx;
+}
+.submit{
+  background-color: #e44a41;
+  color: #ffffff;
+}
+.merchan{
+  display: flex;
+  align-items: center;
+  margin:0 20rpx;
+  padding: 30rpx 0;
+  background-color: #fff;
+}
+.merchan van-checkbox{
+  width: 70rpx;
+}
+.price{
+  width: 160rpx;
+  text-align: right;
+  color: #e44a41;
+  font-size: 28rpx;
+}

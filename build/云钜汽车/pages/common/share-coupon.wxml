@@ -1,0 +1,16 @@
+<block wx:if="{{show_share}}">
+<view role="dialog" class="modal fade bs-example-modal-sm" id="layer">
+    <view class="pop" style="background:url({{approot}}/template/mobile/default/static/sendticket/img/bg2.png)">
+        <image bindtap='closeShareTicket' src="{{approot}}/template/mobile/default/static/sendticket/img/close1.png" alt="" style="width:1.3rem;height:1.3rem;position:absolute;right:0.9rem;top:0.8rem" class="close_get"></image>
+        <view class="pop1">
+            <text class="icon_9">您有一份礼包待领取</text>
+            <image src="{{approot}}/template/mobile/default/static/sendticket/img/gifts.png"style="width: 6.5rem;height: 5.75rem;margin-top: 0.8rem"></image>
+        </view>
+        <view bindtap='getShareTicket'  class="external" data-nocache="true">
+        <view class="pop2" style="margin-top: 0rem">
+            立即领取
+        </view>
+        </view>
+    </view>
+</view>
+</block>

@@ -1,0 +1,13 @@
+@import "/__wuBaseWxss__/2.wxss";
+.fui-list-angle{ color: #999; font-size: 28rpx; }
+.textarea{ padding: 0 30rpx; color: #999; font-size: 30rpx; }
+.image-32{ margin-right: 10rpx; }
+.image-40{ height: 40rpx; width: 40rpx; margin-right: 10rpx; }
+.fui-list-inner .text.grade{ font-size: 30rpx; margin-top: 10rpx; }
+.grade{ font-size: 28rpx; margin-top: 10rpx; }
+.default{ color: #999; }
+.fui-cell-group .fui-cell .fui-cell-label{ width: 100rpx; }
+.btn{ margin-top: 10rpx; }
+.upload,.chose-img{ width: 50rpx; height: 50rpx; margin: 0 5rpx; }
+.delete{ height: 30rpx; width: 30rpx; position: absolute; top: 10rpx; }
+.fui-label { display: inline-block; padding: 0 8rpx; background: #d9d9d9; color: #333; margin: 0 4rpx; font-size: 24rpx; line-height: 40rpx }

@@ -1,0 +1,63 @@
+.cart{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background-color: #fff;
+}
+.cart image{
+  width: 240rpx;
+  margin-right: 20rpx;
+}
+.car-list .title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20rpx;
+  height: 35px;
+  color: #888;
+  background-color: #eeeeee;
+}
+.car-list .title .right{
+  display: flex;
+  align-items: center;
+}
+.car-list .title .right view{
+  margin: 0 5px;
+}
+.config-item{
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.config-item .left{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  width: 26.66%;
+  background-color: #f9f9f9;
+  border-right: 1px solid  #e0e0e0;
+  padding: 0 5px;
+}
+.config-item .right{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  width: 73.34%;
+}
+.s-yuan{
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+}
+.k-yuan{
+  margin-left: 10px;
+  width: 9px;
+  height: 9px;
+  border: 1px solid #000;
+  border-radius: 50%;
+}

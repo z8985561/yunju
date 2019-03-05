@@ -1,0 +1,15 @@
+@import "../index/index";
+.lynn_fightgroups{border-top:4px solid #eee;background: #fff;}
+.lynn_fightgroups_head{height:40px;padding:0 10px;height:40px;line-height: 40px;font-size:12px;color:#44545e;}
+.lynn_fightgroups_list{padding:6px 10px;display: block;background: #ffedf1;}
+.lynn_fightgroups_list .tableli{width:100%;margin:8px 0;background: #fff;height:40px;-webkit-border-radius: 40px;border-radius: 40px;list-style: none;position: relative;}
+.lynn_fightgroups_list .tableli image{height:40px;width:40px;display: block;float:left;-webkit-border-radius: 40px;border-radius: 40px;float:left;}
+.lynn_fightgroups_list .tableli navigator.fr{height:40px;width:60px;line-height: 40px;-webkit-border-bottom-right-radius: 40px;-webkit-border-top-right-radius: 40px;border-bottom-right-radius: 40px;border-top-right-radius: 40px;
+background: #ff473f;color:#fff;font-size:13px;text-align: center;position: relative;z-index: 10;}
+.lynn_fightgroups_list .tableli .lynn_fightgroups_span{padding:0 70px 0 50px;height:40px;display: block;position: absolute;width: 56%}
+.lynn_fightgroups_span view{width:50%;height:40px;display: block;font-size:10px;font-weight: normal;overflow: hidden;}
+.lynn_fightgroups_span view.fl .ptext22{height:20px;line-height: 20px;font-size:10px;position: absolute;}
+.lynn_fightgroups_span view.fl .btext22{color:#959595;font-size:10px;font-weight:normal;line-height: 20px;}
+.lynn_fightgroups_span view.fr{line-height: 40px;text-align: left;color:#051b28;}
+.lynn_fightgroups_span view.fr .btext33{color:#ff473f;font-size:10px;font-weight:normal;line-height: 20px;}
+.lynn_fight_nomarl{padding:10px;background: #fff;font-size:12px;color:#051b28;text-align: center;}

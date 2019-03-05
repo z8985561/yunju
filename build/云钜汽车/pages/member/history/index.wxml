@@ -1,0 +1,62 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='page footer'>
+    <block wx:if='{{total > 0}}'>
+      <view class='fui-list-group'>
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+          <navigator hoverClass='none' openType='redirect' class='fui-list-group-title noclick' url='/pages/index/index?merchid={{item.merchid}}'>
+            <image src='/static/images/icon/shop.png'></image>
+            <view class='text'>{{item.merchname}}</view>
+            <view class='fui-list-angle'>
+              <view class='angle'>{{item.createtime}}</view>
+            </view>
+          </navigator>
+          <label class='fui-list' bindtap='itemClick' data-goodsid='{{item.goodsid}}' data-id='{{item.id}}'><block wx:if='{{isedit}}'>
+<view class='fui-list-media'><radio color='#ef4f4f' checked='{{checkObj[item.id]?1:0}}' class='zoom-80' ></radio></view>
+</block>
+<view class='fui-list-media'><image src='{{item.thumb}}' class='round' ></image></view>
+<view class='fui-list-inner'><view class='row'><view class='subtitle'>{{item.title}}</view></view><view class='subtitle'><text class='text-danger'>￥{{item.marketprice}}</text><text class='text-delete' style='padding-left: 10rpx;' >￥{{item.productprice}}</text></view></view></label></block>
+      </view>
+    </block>
+    <block wx:if='{{loading}}'>
+      <view class='fui-loading'>
+        <view class='icon'></view>
+        <view class='text'>正在加载</view>
+      </view>
+    </block>
+    <block wx:if='{{loaded && list.length > 0}}'>
+      <view class='fui-loading empty'>
+        <view class='text'>没有更多了</view>
+      </view>
+    </block>
+    <block wx:if='{{total <= 0 && !loading}}'>
+      <view class='fui-loading empty'>
+        <view class='text'>没有数据</view>
+      </view>
+    </block>
+    <block wx:if='{{list.length > 0}}'>
+      <view class='fui-footer'>
+        <view class='tool'>
+          <block wx:if='{{isedit}}'>
+            <view class='check'><label><radio bindtap='checkAllClick' color='#ef4f4f' class='zoom-80' checked='{{isCheckAll?1:0}}' ></radio><text>全选</text></label></view>
+          </block>
+          <view class='text'></view>
+          <view class='btns'>
+            <block wx:if='{{!isedit}}'>
+              <view data-action='edit' bindtap='btnClick' class='btn btn-default btn-sm'>编辑</view>
+            </block>
+            <block wx:if='{{isedit}}'>
+              <view data-action='delete' bindtap='btnClick' class='btn btn-danger-o btn-sm {{checkNum > 0?"":"disabled"}}'>删除</view>
+            </block>
+            <block wx:if='{{isedit}}'>
+              <view bindtap='btnClick' class='btn btn-danger btn-sm' data-action='finish' style='margin-left:20rpx;'>完成</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </block>
+    <include src='/pages/common/menu.wxml' />
+  </view>
+</block>

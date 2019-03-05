@@ -1,0 +1,25 @@
+<view class="face" style='padding-top:100rpx;'>
+  <image class="icon" style="display:block;margin:auto;" src="{{shoplogo||'/static/images/noface.png'}}"></image>
+</view>
+<view style='padding:80rpx 80rpx;'>
+  <view class='fui-cell'>
+    <text class='title'>姓名:</text>
+    <text>{{store.realname}}</text>
+  </view>
+  <view class='fui-cell'>
+    <text class='title'>电话:</text>
+    <text>{{store.tel}}</text>
+  </view>
+  <view class='fui-cell'>
+    <text class='title'>小区:</text>
+    <text>{{store.storename}}</text>
+  </view>
+  <view class='fui-cell'>
+    <text class='title'>地址:</text>
+    <text>{{store.address}}</text>
+  </view>
+</view>
+ <import src="/utils/wxParse/wxParse.wxml"/>
+<view class='wxParse' style='margin:0px;text-align:center;'>
+<template is='wxParse' data='{{ wxParseData:htmlcontent.nodes}}' />
+</view> 

@@ -1,0 +1,60 @@
+<!--pages/offered/init-offered.wxml-->
+<van-row custom-class="process" gutter="10">
+  <van-col span="8">
+    <view class='process-item'>
+      <view class='tips'>
+        <text>1</text>
+        <text class='fz-32'> 预约砍价</text>
+      </view>
+      <view class='fz-26 c6'>
+        车主填写正确的报名信息，抢得砍价资格
+      </view>
+      <van-icon name="arrow" size='30px' color="#cccccc" />
+    </view>
+  </van-col>
+  <van-col span="8">
+    <view class='process-item'>
+      <view class='tips'>
+        <text>2</text>
+        <text class='fz-32'> 确认需求</text>
+      </view>
+      <view class='fz-26 c6'>
+        资深顾问将在1个工作日内与您确认购车需求
+      </view>
+      <van-icon name="arrow" size='30px' color="#cccccc" />
+    </view>
+  </van-col>
+  <van-col span="8">
+    <view class='process-item'>
+      <view class='tips'>
+        <text>3</text>
+        <text class='fz-32'> 预约到店</text>
+      </view>
+      <view class='fz-26 c6'>
+        到店立享马上买车大客户专享优惠，签订购车合同
+      </view>
+    </view>
+  </van-col>
+</van-row>
+<van-cell-group>
+  <van-cell title="广州市" icon="location-o" is-link />
+  <van-cell title="锋范" icon="logistics" is-link />
+  <van-field value="{{ username }}" label="姓名" left-icon="contact" placeholder="请输入姓名" />
+  <van-field value="{{ code }}" label="电话" left-icon="phone-o" placeholder="请输入手机号码" />
+  <van-field value="{{ sms }}" center clearable label="验证码" left-icon="info-o" placeholder="请输入短信验证码" border="{{ false }}" use-button-slot>
+    <van-button slot="button" size="small" type="primary">获取验证码</van-button>
+  </van-field>
+</van-cell-group>
+<view class='plr-30'>
+  <van-checkbox value="{{ checked }}" bind:change="onChange">
+    <text class='fz-26'>同意</text>
+    <text class='fz-26'>《个人信息保护声明》</text>
+  </van-checkbox>
+  <view class='submit-btn' bindtap='submitForm'>提交</view>
+  <view class='fz-24 cc'>
+    <view>温馨提示：</view>
+    <view>为保证服务质量，每天限30名。</view>
+    <view>如您已向4S店缴纳定金，我们暂无法受理，请您见谅。</view>
+    <view>为保障您的信息安全，我们将用95013****的虚拟号和您联系。</view>
+  </view>
+</view>

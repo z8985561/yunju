@@ -1,0 +1,6 @@
+.address-item { padding-bottom: 20rpx; }
+.address-item wx-radio { vertical-align: top; margin-top: -2rpx; }
+.address-item wx-image { margin-right: 5rpx; margin-top: -8rpx }
+.fui-list-inner .bar { font-size: 28rpx; }
+.btn-del { margin-left: 10rpx; }
+.btn-del wx-text,.btn-edit wx-text{ display: inline-block; font-size: 26rpx; line-height: 26rpx; }

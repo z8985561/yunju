@@ -1,0 +1,21 @@
+/* pages/offered/offered.wxss */
+.bottom-nav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+.bottom-nav navigator{
+  width: 90%;
+  height: 70rpx;
+  line-height: 70rpx;
+  background-color: #333;
+  text-align: center;
+  border-radius: 35rpx;
+}

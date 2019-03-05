@@ -1,0 +1,91 @@
+var t = getApp(), a = t.requirejs("core"), e = (t.requirejs("icons"), t.requirejs("wxParse/wxParse"));
+Page({
+  data: {
+  
+  },
+
+  onLoad: function (options) {
+    var t=this;
+    var shareopenid = options.shareopenid;
+    var sid = options.sid;
+    var ident = options.ident;
+
+    a.get('sale/coupon/share/shareCoupon',{'shareopenid':shareopenid,'sid':sid,'ident':ident},function(res){
+      console.log(res);
+        if(res.error==0){
+          t.setData({
+            shareident:res.shareident,
+            sid:res.sid,
+            shareurl: res.shareurl
+          });
+          wx.redirectTo({
+            url: '/pages/sale/coupon/sharePage/index?shareident=' + res.shareident + "&sid=" + res.sid + "&shareurl=" + res.shareurl,
+          })
+        }else{
+          if(res.status==-1){
+            t.setData(res.result)
+            var url = '/pages/sale/coupon/sharePage/index?shareident=' + res.result.shareident;
+            if (res.shareurl!=''){
+             url=url + "&shareurl=" + res.shareurl
+            }
+            if(res.close!=''){
+              url =url+"&close="+res.close;
+            }
+            console.log(url);
+            wx.redirectTo({
+              url: url,
+            })
+          }
+        }
+    }) 
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+  
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+  
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+  
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+  
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

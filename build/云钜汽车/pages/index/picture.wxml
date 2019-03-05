@@ -1,0 +1,14 @@
+<block wx:if="{{item.data.length > 0}}">
+    <view style="width:100%;{{item.style.background?'background:'+item.style.background+';':''}}{{item.style.paddingtop?'padding-bottom:'+item.style.paddingtop/2+'px;':''}}">
+        <view wx:for='{{item.data}}' wx:for-item='items' wx:for-index='idx' wx:key="nav" style="{{item.style.paddingtop?'padding:'+item.style.paddingtop/2+'px '+item.style.paddingleft/2+'px 0;':''}}">
+          <block wx:if="{{items.linkurl!=''}}">
+            <navigator url='{{items.linkurl}}' open-type='navigate'>
+                <image mode="widthFix" src="{{items.imgurl}}" bindload="imagesHeight" class="advimg" data-type="pictureheight"></image>
+            </navigator>
+           </block>
+           <block wx:else>
+                <image mode="widthFix" data-src='{{items.imgurl}}' src="{{items.imgurl}}" bindload="imagesHeight" bindtap='showImage' class="advimg" data-type="pictureheight"></image>
+            </block>
+        </view>
+    </view>
+</block>

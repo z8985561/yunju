@@ -1,0 +1,37 @@
+<template name="diyform">
+<view class='fui-cell-group diyform-container'>
+  <block wx:for='{{diyform.diyformfields}}' wx:for-item='field' wx:for-index='index' wx:key="*this">
+    <view class='fui-cell'>
+      <view class='fui-cell-label'>{{field.tp_name}}</view>
+      <view class='fui-cell-info'>
+        <block wx:if='{{field.data_type == 0 || field.data_type == 1 || field.data_type == 2 || field.data_type == 6 || field.data_type == 7}}'>
+          <view>{{diyform.diyformdata[field.diy_type]}}</view>
+        </block>
+        <block wx:if='{{field.data_type == 3}}'>
+          <view>
+            <block wx:for='{{diyform.diyformdata[field.diy_type]}}' wx:for-item='item' wx:for-index='index' wx:key="*this"><text>{{item}}</text></block>
+          </view>
+        </block>
+        <block wx:if='{{field.data_type == 5}}'>
+          <view>
+            <view class='fui-images fui-images-sm'>
+              <block wx:for='{{diyform.diyformdata[field.diy_type]}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+                <image src='{{item}}' class='image image-sm'></image>
+              </block>
+            </view>
+          </view>
+        </block>
+        <block wx:if='{{field.data_type == 8}}'>
+          <view>{{diyform.diyformdata[field.diy_type][0]}} 至 {{diyform.diyformdata[field.diy_type][1]}}</view>
+        </block>
+        <block wx:if='{{field.data_type == 9}}'>
+          <view>{{diyform.diyformdata[field.diy_type].province + " " + diyform.diyformdata[field.diy_type].city}}</view>
+        </block>
+        <block wx:if='{{field.data_type == 10}}'>
+          <view>{{diyform.diyformdata[field.diy_type].name1}}</view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>
+</template>

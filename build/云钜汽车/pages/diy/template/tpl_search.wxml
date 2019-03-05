@@ -1,0 +1,18 @@
+<view class="category-search">
+    <view class="weui-flex">
+        <view class="weui-flex__item category-search-form">
+            <view class="flex-head-search" id="searchBar" style="background:{{diyitem.style.background}};padding:{{diyitem.style.paddingtop}}rpx {{diyitem.style.paddingleft}}rpx">
+                <navigator class="weui-search-bar__form {{diyitem.style.searchstyle}}" hoverClass="none" style="background:{{diyitem.style.inputbackground}};color:{{diyitem.style.color}}" url="/pages/goods/index/index?fromsearch=1">
+                    <view class="weui-search-bar__box category-search-box">
+                        <view class="flex-icon-search">
+                            <text class="icox icox-search"></text>
+                        </view>
+                        <view class="weui-search-bar__input flex-input" style="text-align:{{diyitem.style.textalign}}">
+                              {{diyitem.params.placeholder}}
+                            </view>
+                    </view>
+                </navigator>
+            </view>
+        </view>
+    </view>
+</view>

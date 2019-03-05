@@ -1,0 +1,28 @@
+/* pages/brand-list/brand-list.wxss */
+
+.title{
+  padding: 12rpx 30rpx;
+  background-color: #f8f8f8;
+  color: #aaa;
+}
+.list{
+  padding: 16rpx 30rpx;
+  margin-bottom: 10rpx;
+  background-color: #fff;
+}
+.list image{
+  width: 240rpx;
+}
+.item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.item .right{
+  padding: 40rpx 0;
+  width: 60%;
+}
+.price{
+  color: #dc4251;
+}

@@ -1,0 +1,142 @@
+/* pages/offered/detail.wxss */
+.pic{
+  position: relative;
+  width: 100%;
+}
+.pic image{
+  display: block;
+  width: 100vw;
+}
+.num-people{
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+  padding: 0 20rpx;
+  font-size: 30rpx;
+  border:1px solid #000;
+  border-radius: 40rpx;
+}
+.price-box{
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx 30rpx;
+  background-color: rgb(52, 52, 52);
+}
+.right text{
+  padding: 0 6rpx;
+  background-color: #fff;
+  color:#333;
+  border-radius: 6rpx;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+.title image{
+  width: 60rpx;
+  vertical-align: middle;
+}
+.title button{
+  background-color: #fff;
+}
+.title button::after{
+  border:none;
+}
+.subsidy{
+  display: flex;
+  padding: 20rpx 0;
+  color: red;
+  font-size: 24rpx;
+  border-bottom: 1px solid #eee;
+}
+.subsidy image{
+  width: 30rpx;
+  height: 30rpx;
+  background-color: red;
+  vertical-align: top;
+}
+.lightning text{
+  vertical-align: middle;
+}
+.lightning{
+  margin-right: 20rpx;
+  padding-right: 6rpx;
+  height: 28rpx;
+  line-height: 28rpx;
+  font-size: 20rpx;
+  border:1px solid red;
+  border-radius: 30rpx;
+  overflow: hidden;
+}
+.process{
+  padding: 40rpx 0;
+}
+.process-item{
+  position: relative;
+  padding: 10rpx;
+  box-shadow: 1px 1px 5px #ddd;
+  border-radius: 10rpx;
+}
+.process-item van-icon{
+  position: absolute;
+  top: 50%;
+  right: -40rpx;
+  transform: translateY(-50%)
+}
+.process-item .tips text:first-child{
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  background-color: rgb(255, 169, 164);
+  font-size: 24rpx;
+  text-align: center;
+  color:#fff;
+  border-radius: 15rpx;
+}
+.bottom-nav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+.bottom-nav view{
+  width: 40%;
+  height: 70rpx;
+  line-height: 70rpx;
+  border: 1px solid #333;
+  text-align: center;
+}
+.bottom-nav .left{
+  border-top-left-radius: 35rpx;
+  border-bottom-left-radius: 35rpx;
+}
+.bottom-nav .right{
+  border-top-right-radius: 35rpx;
+  border-bottom-right-radius: 35rpx;
+  color: #fff;
+  background-color: #333;
+}
+.offered-form{
+  width: 90vw;
+  padding: 30rpx;
+  box-sizing: border-box;
+}
+.submit-btn{
+  width: 90%;
+  margin: 20rpx auto 0;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #aaa;
+  text-align: center;
+  color:#fff;
+  border-radius: 40rpx;
+}

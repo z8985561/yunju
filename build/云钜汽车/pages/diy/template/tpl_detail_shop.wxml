@@ -1,0 +1,11 @@
+<view class="fui-cell-group fui-shop-group">
+    <navigator class="fui-list" openType="redirect" url="/pages/index/index">
+        <view class="fui-list-media">
+            <image src="{{goods.shopdetail.logo}}"></image>
+        </view>
+        <view class="fui-list-inner">
+            <view class="title">{{goods.shopdetail.shopname}}</view>
+            <view class="subtitle" wx:if="{{goods.shopdetail.description}}">{{goods.shopdetail.description}}</view>
+        </view>
+    </navigator>
+</view>

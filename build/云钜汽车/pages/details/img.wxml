@@ -1,0 +1,97 @@
+<view class='view-box'>
+  <van-tabs bind:click="onClick" swipeable>
+    <van-tab title="外观">
+      <view class="content" style='padding:0 10px 0;background:#fff;'>
+        <scroll-view style='height:{{scroll_height}}px' scroll-y bindscrolltolower="scrolltolower" data-type="facade">
+          <van-row gutter="10">
+            <block wx:for="{{facadeList}}" wx:key wx:for-index='ids'>
+              <van-col span="8" class="img-item">
+                <image bindtap='show_modal' data-index="{{ids}}" data-type="facade" src='{{item}}'></image>
+              </van-col>
+            </block>
+          </van-row>
+          <view style='height:143.32rpx;'></view>
+        </scroll-view>
+      </view>
+    </van-tab>
+    <van-tab title="中控">
+      <view class="content" style='padding:0 10px 0;background:#fff;'>
+        <scroll-view style='height:{{scroll_height}}px' scroll-y bindscrolltolower="scrolltolower" data-type="control">
+          <van-row gutter="10">
+            <block wx:for="{{controlList}}" wx:key wx:for-index='ids'>
+              <van-col span="8" class="img-item">
+                <image bindtap='show_modal' data-index="{{ids}}" data-type="control" src='{{item}}'></image>
+              </van-col>
+            </block>
+          </van-row>
+          <view style='height:143.32rpx;'></view>
+        </scroll-view>
+      </view>
+    </van-tab>
+    <van-tab title="座椅">
+      <view class="content" style='padding:0 10px 0;background:#fff;'>
+        <scroll-view style='height:{{scroll_height}}px' scroll-y bindscrolltolower="scrolltolower" data-type="seat">
+          <van-row gutter="10">
+            <block wx:for="{{seatList}}" wx:key wx:for-index='ids'>
+              <van-col span="8" class="img-item">
+                <image bindtap='show_modal' data-index="{{ids}}" data-type="seat" src='{{item}}'></image>
+              </van-col>
+            </block>
+          </van-row>
+          <view style='height:143.32rpx;'></view>
+        </scroll-view>
+      </view>
+    </van-tab>
+    <van-tab title="细节">
+      <view class="content" style='padding:0 10px 0;background:#fff;'>
+        <scroll-view style='height:{{scroll_height}}px' scroll-y bindscrolltolower="scrolltolower" data-type="details">
+          <van-row gutter="10">
+            <block wx:for="{{detailsList}}" wx:key wx:for-index='ids'>
+              <van-col span="8" class="img-item">
+                <image  bindtap='show_modal' data-index="{{ids}}" data-type="details" src='{{item}}'></image>
+              </van-col>
+            </block>
+          </van-row>
+          <view style='height:143.32rpx;'></view>
+        </scroll-view>
+      </view>
+    </van-tab>
+    <van-tab title="图解">
+      <view class="content" style='padding:0 10px 0;background:#fff;'>
+        <scroll-view style='height:{{scroll_height}}px' scroll-y bindscrolltolower="scrolltolower" data-type="illustration">
+          <van-row gutter="10">
+            <block wx:for="{{illustrationList}}" wx:key wx:for-index='ids'>
+              <van-col span="8" class="img-item">
+                <image bindtap='show_modal' data-index="{{ids}}" data-type="illustration" src='{{item}}'></image>
+              </van-col>
+            </block>
+          </van-row>
+          <view style='height:143.32rpx;'></view>
+        </scroll-view>
+      </view>
+    </van-tab>
+  </van-tabs>
+</view>
+<view class='image-modai-box' wx:if="{{show_modal}}">
+  <view class='swiper-index'>
+    <text>{{show_current+1}}/{{show_length}}</text>
+  </view>
+  <swiper class='modai-swiper' bindchange="swiper_change" current="{{show_index}}">
+    <block wx:for="{{show_list}}" wx:key wx:for-index='ids'>
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode="widthFix" />
+         <view class='swiper-text'>
+          <text>{{carModelName}}</text>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='tarbar'>
+    <text bindtap='select_type' data-type='facade' class='{{type!="facade"||"type"}}'>外观</text>
+    <text bindtap='select_type' data-type='control' class='{{type!="control"||"type"}}'>中控</text>
+    <text bindtap='select_type' data-type='seat' class='{{type!="seat"||"type"}}'>座椅</text>
+    <text bindtap='select_type' data-type='details' class='{{type!="details"||"type"}}'>细节</text>
+    <text bindtap='select_type' data-type='illustration' class='{{type!="illustration"||"type"}}'>图解</text>
+  </view>
+  <view class='close-modai' catchtap='close_modal'>×</view>
+</view>

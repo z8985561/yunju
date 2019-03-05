@@ -1,0 +1,27 @@
+<view class='page navbar order'>
+  <block wx:if='{{list.length != 0}}'>
+    <view class='contain'>
+      <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="list">
+        <view class='fui-list-group noclick'>
+          <navigator hoverClass='none' url='/pages/article/detail?id={{item.id}}'>
+            <view class='fui-list list-padding'>
+              <text class='fui-list-inner'>
+              {{item.article_title}}
+              </text>
+            </view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </block>
+  <block wx:if='{{list.length == 0}}'>
+    <view class='center'>
+      <view class='empty'>
+        <image class='light' src='/static/images/icon/lights-128.png'></image>
+        <view class='text-cancel'>暂时没有任何文章</view>
+        <navigator openType='redirect' url='/pages/index/index' class='btn btn-default-o'>到处逛逛</navigator>
+      </view>
+    </view>
+  </block>
+  <include src='/pages/common/menu.wxml' />
+</view>

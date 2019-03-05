@@ -1,0 +1,20 @@
+@import "/__wuBaseWxss__/2.wxss";
+.fui-footer{ text-align: right; }
+.bg{ background:#ff9326; margin-top: 0; color: #fff; }
+.row{ font-size: 30rpx; font-weight: bold; }
+.order-price{ font-size: 27rpx; color: #fff; line-height: 44rpx }
+.adress{ font-size: 27rpx; color: #666; }
+.order-info{ padding: 20rpx 0 }
+.order-info wx-view,.send-code{ padding: 6rpx 25rpx; color: #666; font-size: 28rpx; }
+.send-code.send-code1{ padding: 6rpx 10rpx; color: #666; font-size: 28rpx; }
+.price{ font-size: 30rpx; color: #999999; width: 260rpx; }
+.fui-list-inner .subtitle{ line-height: 40rpx }
+.send-code{display: none;}
+.fui-cell-group.toggleSend-group .send-code{display: block;font-size: 30rpx}
+.fui-cell-group.toggleSend-group .fui-cell .fui-cell-remark::after{ -webkit-transform:rotate(135deg); -ms-transform:rotate(135deg); transform:rotate(135deg); }
+.fui-list-media .image-48{ height: 48rpx; width: 48rpx }
+.text-padding{ padding:0 10rpx }
+.image-48{ margin: 8rpx 0 }
+.operate{ display: -webkit-flex; display: flex; }
+.operate wx-navigator{ -webkit-flex: 1; flex: 1 }
+.fui-cell-group .fui-cell .fui-cell-remark { color:#888; text-align:right; font-size:28rpx; margin-right:8rpx; }

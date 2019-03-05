@@ -1,0 +1,102 @@
+/* components/offered-item/offered-item.wxss */
+
+.offered-item {
+  margin: 20rpx;
+  box-shadow: 1px 1px 5px #ddd;
+  border-radius: 10rpx;
+  padding-bottom: 20rpx;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  padding: 20rpx;
+  font-size: 20rpx;
+  border-bottom: 1px solid #eee;
+  color: #333;
+}
+
+.title .back {
+  padding: 0 4rpx;
+  background-color: #333;
+  color: #fff;
+  border-radius: 4rpx;
+}
+
+.title .right {
+  color: #ddd;
+}
+
+.content {
+  display: flex;
+  padding: 20rpx 20rpx 40rpx;
+}
+
+.pic {
+  width: 240rpx;
+}
+
+.des {
+  flex: 1;
+  padding-left: 30rpx;
+}
+
+.brand {
+  width: 60rpx;
+  vertical-align: middle;
+}
+
+.name {
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.name text {
+  vertical-align: middle;
+}
+
+.price {
+  color: #999;
+  font-weight: 700;
+  font-size: 24rpx;
+  text-decoration: line-through;
+}
+
+.btn {
+  float: right;
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  font-size: 24rpx;
+  border-radius: 25rpx;
+}
+
+.subsidy {
+  display: flex;
+  padding: 0 30rpx;
+}
+
+.subsidy image {
+  width: 30rpx;
+  height: 30rpx;
+  background-color: #e44a41;
+  vertical-align: top;
+}
+
+.subsidy-tip {
+  height: 30rpx;
+  line-height: 20rpx;
+  border: 1px solid #e44a41;
+  border-radius: 15rpx;
+  overflow: hidden;
+  color: #e44a41;
+}
+
+.subsidy-tip text {
+  font-size: 20rpx;
+  padding: 0 6rpx;
+  vertical-align: top;
+}

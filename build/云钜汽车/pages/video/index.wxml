@@ -1,0 +1,49 @@
+<!-- <block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block> -->
+<!-- <block wx:if='{{show}}'> -->
+  <view class='page'>
+    <view class='fui-header'>
+      <view class='search_content' >
+        <icon class="search_icon" size='18' type='search'></icon>
+        <input class="search_input" bindinput='search' name='search' bindfocus='bindSearch' placeholder='输入关键字进行搜索'></input>
+        <view class='{{search?block:none}} search_button' bindtap='search_button'>搜索</view>
+      </view>
+    </view>
+    <view scroll-y bindscrolltolower="scrolltolower" class='body-box' style="height:{{scrollviewH}}px;">
+    <block wx:for="{{list}}" wx:for-item="item" wx:for-index="ids" wx:key="key">
+      <view class="body-content">
+       <view class='content-title-box'>
+        <text class='title-text'>{{item.title}}</text>
+        <text class='title-time'>{{item.createtime}}</text>
+       </view>
+       <view class='content-video-box' bindtap="play" data-id="{{item.id}}" data-index="{{ids}}">
+       
+        <image src='{{item.img}}'  mode='widthFix'></image>
+        <image class='play-icon' src='/static/images/video-play.png' mode='widthFix'></image>
+
+       </view>
+       <view class='content-bottom-box'>
+        <view class='bottom-left'>
+          <image src='../../images/icon/icon_eyes.png' class='icon-eyes'></image>
+          <text class='icon_text'>{{item.readnum}}</text>
+        </view>
+        <view class='bottom-right'>
+        <navigator url="/pages/video/detail?id={{item.id}}"> 
+          <view class='bottom-right-chat'>
+            <image src='../../images/icon/icon_chat.png' class='icon-eyes'></image>
+            <text class='icon_text'>{{item.liulan}}</text>
+          </view>
+        </navigator>
+          <view bindtap='like' data-id="{{item.id}}">
+            <image wx:if="{{item.icon_like}}" src='../../images/icon/icon_like.png' class='icon-eyes'>></image>
+             <image wx:else src='../../images/icon/icon_nolike.png' class='icon-eyes'></image>
+             <text class='icon_text'>{{item.likenum}}</text>
+          </view>
+        </view>
+       </view> 
+      </view>
+    </block>
+    </view>
+    <include src="/pages/common/menu.wxml"></include>
+  </view>

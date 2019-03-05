@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "van-icon": "/vant-ui/icon/index",
+    "van-row": "/vant-ui/row/index",
+    "van-col": "/vant-ui/col/index",
+    "van-popup": "/vant-ui/popup/index",
+    "van-field": "/vant-ui/field/index",
+    "van-checkbox": "/vant-ui/checkbox/index",
+    "van-checkbox-group": "/vant-ui/checkbox-group/index",
+    "van-cell": "/vant-ui/cell/index",
+    "van-cell-group": "/vant-ui/cell-group/index"
+  }
+}

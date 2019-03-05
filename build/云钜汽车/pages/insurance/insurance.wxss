@@ -1,0 +1,28 @@
+/* pages/insurance/insurance.wxss */
+page{
+  background: #fff;
+}
+.head{
+  display: flex;
+  align-items: center;
+  padding: 0 30rpx;
+  margin-bottom: 30rpx;
+}
+.head image{
+  margin-right: 30rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.next-btn{
+  position: fixed;
+  bottom: 10rpx;
+  left: 30rpx;
+  right: 30rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  color: #fff;
+  background-color: #e44a41;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,39 @@
+
+  <view class='fui-navbar'>
+    <navigator hoverClass='none' openType='redirect' class='nav-item {{route != "cart" || "active"}}' url='/pages/video/index?route=movie'>
+      <block wx:if='{{cartcount > 0}}'>
+        <view class='badge'>{{cartcount}}</view>
+      </block>
+      <image class='icon' src='{{route == "movie"?icons.movie:icons.no_movie}}'></image>
+      <text class='label'>视频</text>
+    </navigator>
+     <navigator hoverClass='none' openType='redirect' class='nav-item {{route != "cart" || "active"}}' url='/pages/choose-car/choose-car?route=car'>
+      <block wx:if='{{cartcount > 0}}'>
+        <view class='badge'>{{cartcount}}</view>
+      </block>
+      <image class='icon' src='{{route == "car"?icons.car:icons.no_car}}'></image>
+      <text class='label'>选车</text>
+    </navigator>
+     <navigator hoverClass='none' url='/pages/index/index' class='nav-item {{route != "home" || "active"}}' openType='redirect'>
+      <image class='icon' src='{{route == "home"?icons.new_shop:icons.no_new_shop}}'></image>
+      <text class='label'>商城</text>
+    </navigator>
+    <navigator hoverClass='none' openType='redirect' class='nav-item {{route != "category" || active}}' url='/pages/shop/caregory/index'>
+      <image class='icon' src='{{route == "category"?icons.new_type:icons.no_new_type}}'></image>
+      <text class='label'>分类</text>
+    </navigator>
+    <navigator wx:if="{{!modelShow}}" hoverClass='none' openType='redirect' class='nav-item {{route != "member" || active}}' url='/pages/member/index/index'>
+      <image class='icon' src='{{route == "member"?icons.new_my:icons.no_new_my}}'></image>
+      <text class='label'>个人中心</text>
+    </navigator>
+        <navigator class='nav-item' wx:else>
+
+      <button style='display:inline;padding:0px;margin:0px;line-height:inherit;height:100%;position:relative;border-radius:0px;border:none;background-color:#fff;' class='button-item' open-type="getUserInfo" bindgetuserinfo='userinfo'>
+        <image class='icon'  src='{{route == "member"?icons.people_red:icons.people}}'></image>
+        <text class='label' style='color:#999;'>我的</text>
+      </button>
+    </navigator>
+  </view>
+<view class='fui-toast {{FoxUIToast.show?"in":"out"}}'>
+  <view class='text'>{{FoxUIToast.text}}</view>
+</view>

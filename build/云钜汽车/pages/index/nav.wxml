@@ -1,0 +1,12 @@
+<view wx:if="{{item.data.length > 0}}">
+    <view class="fui-icon-group col-{{item.style.rownum?item.style.rownum:4}} noborder {{item.style.navstyle?item.style.navstyle:''}}" style="{{item.style.background?'background:'+item.style.background+';':''}}">
+        <block wx:for='{{item.data}}' wx:for-item='item' wx:for-index='idx' wx:key="nav">
+            <view bindtap="navigate" class="fui-icon-col external" data-appid="{{item.appid}}" data-appurl="{{item.appurl}}" data-phone="{{item.phone}}" data-url="{{item.linkurl}}">
+                <view>
+                    <image src='{{item.imgurl}}'></image>
+                </view>
+                <view class='navs-navname' style="{{item.color?'color:'+item.color+';':''}}">{{item.text}}</view>
+            </view>
+        </block>
+    </view>
+</view>

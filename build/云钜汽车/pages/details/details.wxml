@@ -1,0 +1,98 @@
+<!--pages/details/details.wxml-->
+<view class="bannar_box" bindtap='check_allImg' data-id='{{carItem.id}}'>
+  <swiper autoplay="true">
+    <block wx:for="{{carItem.imgUrl}}" wx:key="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode='widthFix' />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class='p-30 intro'>
+    <view class='fz-24'>中型车</view>
+    <view class='fz-34 fw-700'>31.00-48.68
+      <text class='fz-24'>万</text>
+    </view>
+  </view>
+  <view class='all_img'>
+    <view class='all_img_img'>
+      <image src='../../static/images/nopic.png'></image>
+    </view>
+    <view class='all_img_text'>
+      <text>1314</text>
+    </view>
+  </view>
+</view>
+<!-- 年份tab切换 -->
+<van-tabs active="{{ active }}" bind:change="onChange">
+  <van-tab title="全部">
+  <!-- 大类 -->
+    <view class='car-series'>
+      <view class='title fz-30 c3'>1.6升 涡轮增压 156马力(9.1秒)</view>
+      <!-- 小类 -->
+      <view class='car-series-item'>
+        <navigator class='flex mb-40' url="">
+          <view class='left'>
+            <view class='fz-30 mb-20'>2019 款 C 180L 动感型运动版</view>
+            <view class='fz-24 cc'>9档手自一体 95号汽油 前置后驱 225/50 R17</view>
+          </view>
+          <view class='right'>
+            <view class='fz-30 price'>31.58<text>万起</text>
+            </view>
+            <view class='fz-24 cc'>指导价31.58万</view>
+          </view>
+        </navigator>
+        <view class='plr-30 clearfix'>
+          <navigator hover-class='none' class='btn-enquiry fz-28'>询底价</navigator>
+        </view>
+      </view>
+      <view class='car-series-item'>
+        <navigator class='flex mb-40' url="">
+          <view class='left'>
+            <view class='fz-30 mb-20'>2019 款 C 180L 动感型运动版</view>
+            <view class='fz-24 cc'>9档手自一体 95号汽油 前置后驱 225/50 R17</view>
+          </view>
+          <view class='right'>
+            <view class='fz-30 price'>31.58<text>万起</text>
+            </view>
+            <view class='fz-24 cc'>指导价31.58万</view>
+          </view>
+        </navigator>
+        <view class='plr-30 clearfix'>
+          <navigator hover-class='none' class='btn-enquiry fz-28'>询底价</navigator>
+        </view>
+      </view>
+      <view class='car-series-item'>
+        <navigator class='flex mb-40' url="">
+          <view class='left'>
+            <view class='fz-30 mb-20'>2019 款 C 180L 动感型运动版</view>
+            <view class='fz-24 cc'>9档手自一体 95号汽油 前置后驱 225/50 R17</view>
+          </view>
+          <view class='right'>
+            <view class='fz-30 price'>31.58<text>万起</text>
+            </view>
+            <view class='fz-24 cc'>指导价31.58万</view>
+          </view>
+        </navigator>
+        <view class='plr-30 clearfix'>
+          <navigator hover-class='none' class='btn-enquiry fz-28'>询底价</navigator>
+        </view>
+      </view>
+      <!-- 小类 -->
+    </view>
+  <!-- /大类 -->
+  </van-tab>
+
+  <van-tab title="2019款">内容 2</van-tab>
+  <van-tab title="2018款">内容 3</van-tab>
+
+</van-tabs>
+<!-- 年份tab切换 -->
+<view style='height:100rpx;'></view>
+<van-goods-action>
+  <van-goods-action-icon bind:click='collect' data-item="{{carItem}}" icon="{{collect}}" text="收藏" />
+  <van-goods-action-icon open-type="share" icon="share" text="转发" />
+  <van-goods-action-button bind:click='depreciate' text="降价通知" type="warning" />
+  <van-goods-action-button text="询底价" />
+</van-goods-action>
+<van-toast id="van-toast" />
+<!-- 详情和询价end -->

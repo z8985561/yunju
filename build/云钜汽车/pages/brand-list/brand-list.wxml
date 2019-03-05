@@ -1,0 +1,20 @@
+<!--pages/brand-list/brand-list.wxml-->
+<scroll-view scroll-y style='height:100vh;'>
+  <block wx:for="{{list}}" wx:for-item="item" wx:for-index="ids" wx:key="key" >
+  <view class='brand-wrap'>
+    <view class='title fz-28'>{{item.title}}</view>
+    <view class='list'  wx:for="{{item.data}}" wx:for-item="child"  wx:key="key">
+      <navigator class='item' hover-class='none' url='/pages/details/details?id={{child.id}}&name={{item.title}}&imgUrl={{child.imgUrl}}&carName={{child.name}}'>
+        <view class='left'>
+          <image src='{{child.imgUrl}}' mode='widthFix'></image>
+        </view>
+        <view class='right'>
+          <view>{{child.name}}</view>
+          <view class='price fz-28'>{{child.price}}</view>
+          <view class='fz-24 c6'>紧凑型车</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+  </block>
+</scroll-view>

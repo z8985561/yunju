@@ -1,0 +1,211 @@
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class='fui-page order-list-page'>
+	<view class='fui-content' style="paviewing-bottom:0;">
+    <view wx:if="{{thumb}}">
+		<view class="lynn_team_detail_head">
+			<view class="fui-swipe lynn_swipe" data-speed="5000" data-gap="5">
+				<view class="fui-swipe-wrapper">
+          <block wx:for="{{goods.thumb_url}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+					<view class="fui-swipe-item">
+            <image src="{{item}}" alt="{{goods.title}}">
+            </image>
+          </view>
+          </block>
+				</view>
+				<view class="fui-swipe-page">
+          <block wx:for="{{goods.thumb_url}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+					<view class="fui-swipe-bullet"></view>
+          </block>
+				</view>
+			</view>
+      <view wx:if="{{order.success==1}}">
+			<image class="team_img" src="static/images/success.png" alt="组团成功"></image>
+      </view>
+      <view wx:elif="{{lasstime2>0&&order.success==0}}">
+			<image class="team_img" src="static/images/frightin.png" alt="等待成团">    </image>
+      </view>
+      <view wx:elif="{{order.success==-1}}">
+			<image class="team_img" src="static/images/fail.png" alt="团购失败"></image>
+			</view>
+			<text class="lynn_team_detail_title">{{goods.title}}</text>
+			<text class="lynn_team_detail_goods_info">
+				拼团价：￥<text>{{goods.groupsprice}}</text>/<view wx:if="{{item.units}}" style='display:inline;'>{{item.goodsnum}}{{item.units}}</view><view wx:else>1件</view><del>{{goods.price}}</del>
+			</text>
+		</view>
+		</view>
+		<view class="pp">
+      <view wx:if="{{lasttime2>0&&n>0}}">
+        <view class="fui-cell">
+          <view class="fui-cell-text">
+            <view class='fui-labeltext fui-labeltext-danger fui-timer'>
+              <view class='label'>拼团剩余</view>
+              <view class='text'>
+                <text class="day number text-danger" >{{day}}</text><text class="time">天</text>
+                <text class="hour number text-danger">{{hour}}</text><text class="time">小时</text>
+                <text class="minute number text-danger">{{minute}}</text><text class="time">分</text>
+                <text class="second number text-danger">{{second}}</text><text class="time">秒</text>
+              </view>
+            </view>
+            ，还差<text>{{n}}</text>人
+          </view>
+        </view>
+			</view>
+      <view wx:if="{{!istime}}">
+        <view class="fui-cell">
+          <view class="fui-cell-text">
+            <view class='fui-labeltext fui-labeltext-danger fui-timer'>
+              {{istimeTitle}}
+            </view>
+          </view>
+        </view>
+      </view>
+			<view id="" style="clear: both;"></view>
+			<view class="pp_users" id="pp_users">
+         <block wx:for="{{orders}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view wx:if="{{item.openid==tuan_first_order.openid}}" class="pp_users_item pp_users_normal">
+					<view><image src="{{item.avatar}}" ></image></view>
+          </view>
+          <view wx:else="{{item.openid!=tuan_first_order.openid}}" class="pp_users_item pp_users_normal">
+					<view><image src="{{item.avatar}}"></image></view>
+          </view>
+          </block>
+
+        <block wx:for="{{arr}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+				<view  class="pp_users_item"><image ></image></view>
+        </block>
+			</view>
+			<view class="pp_tips" id="flag_0_a" >
+				<view class="groups_info">
+          <view wx:if="{{lasttime2>0&&n>0}}">
+					快邀请好友一起来拼团吧！
+          </view>
+          <view wx:else>
+					团购已结束
+          </view>
+				</view>
+			</view>
+		</view>
+		<view class='fui-cell-group'>
+      <view class='title'>
+        <view class='fui-tab fui-tab-danger' id='tab'>
+          <view bindtap='teamTab' class='item {{team}}' data-tap='team'>拼团详情</view>
+          <view bindtap='teamTab' class='item {{basic}}' data-tap='basic'>商品详情</view>
+        </view>
+      </view>
+    </view>
+    
+		<view class="detail-block">
+      <block wx:if="{{team}}">
+			<view class="block block-team tab-team" id="team">
+				<view class="lynn_team_list">
+          <block wx:for="{{orders}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view wx:if="{{item.openid==tuan_first_order.openid}}">
+					<view class="lynn_team_list_dd row">
+						<image src="{{item.avatar}}" alt="{{item.nickname}}}"></image>
+						<text class="fl">{{item.nickname}}</text>
+						<text class="fr">{{item.paytime}} 开团</text>
+					</view>
+          </view>
+          <view wx:else>
+            <view class="lynn_team_list_dd row">
+              <image src="{{item.avatar}}" alt="{{item.nickname}}"></image>
+              <view wx:if="{{item.nickname}}"><text class="fl">{{item.nickname}}</text></view><view wx:else>匿名</view>
+              <text class="fr">{{item.paytime}} 参团</text>
+            </view>
+          </view>
+          </block>
+				</view>
+			</view>
+      </block>
+      <block wx:if="{{basic}}">
+			<view class="block block-basic tab-basic" id="basic">
+        <view wx:if="{{groupsset.description!=0}}">
+					<view class='wxParse'><template is='wxParse' data='{{ wxParseData:wxParseData1.nodes }}' /></view>
+        </view>
+        <view wx:elif="{{goods.content}}">
+					<view class='wxParse'><template is='wxParse' data='{{ wxParseData:wxParseData0.nodes }}' /></view>
+        </view>
+        <view wx:else>
+				<view style="font-size:14ox;paviewing:4px">暂无商品详情</view>
+				</view>
+			</view>
+      </block>
+		</view>
+		<view class="step">
+			<view class="step_hd">
+				<text class="left"></text>拼团玩法<navigator class="step_more" url="/application/pages/groups/goods/rules">查看详情></navigator>
+			</view>
+			<view id="footItem" class="step_list">
+				<view class="step_item ">
+					<view class="step_num">1</view>
+					<view class="step_detail" style='height:100%;width:100%;'>
+						<text class="step_tit">选择
+							心仪商品</text>
+					</view>
+				</view>
+				<view class="step_item ">
+					<view class="step_num">2</view>
+					<view class="step_detail">
+						<text class="step_tit">支付开团
+							或参团</text>
+					</view>
+				</view>
+				<view class="step_item {{n=='0'?'':'step_item_on'}}" id="step_3">
+					<view class="step_num">3</view>
+					<view class="step_detail">
+						<text class="step_tit" >邀请好友
+							参团支付</text>
+					</view>
+				</view>
+				<view class="step_item {{n=='0'?'step_item_on':''}}" id="step_4">
+					<view class="step_num">4</view>
+					<view class="step_detail">
+						<text class="step_tit">达到人数
+							团购成功</text>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view style="height:50px;"></view>
+	</view>
+	<view class="fui-navbar lynn_footer" style='fo'>
+    <view wx:if="{{n==0}}">
+      <view class="other" >
+        <text class="">团购已成功</text>
+      </view>
+    </view>
+    <view wx:if="{{n!=0}}">
+      <view wx:if="{{lasttime2>0}}">
+        <view wx:if="{{myorder}}">
+          <view wx:if="{{n==0}}">
+            <view class="other">
+              <text class="">团购已成功</text>
+            </view>
+          </view>
+          <view wx:else>
+            <button plain="true" open-type='share' class='other' id='invitation'>
+              <text class="">转发邀请好友参团吧</text>
+            </button>
+            <!-- <view class="other"  id="invitation">
+              <text class="">转发邀请好友参团吧</text>
+            </view> -->
+          </view>
+        </view>
+				<view wx:else>
+          <navigator class="other" url="/application/pages/groups/orders/confirm?id={{goods.id}}&teamid={{teamid}}&type=groups">
+            <text class="">我要参团</text>
+          </navigator>
+				</view>
+      </view>
+			<view wx:else>
+        <view class="other" >
+          <text class="">本次团已过期</text>
+        </view>
+			</view>
+		</view>
+		<navigator class="home" open-type='redirect' url="/application/pages/groups/index/index">
+			<text class="fa icon icon-home text1"></text>
+			首页
+		</navigator>
+	</view>
+</view>

@@ -1,0 +1,20 @@
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class="page">
+  <view class='detail-hard' style="{{merch.storebg?'background-image:url('+merch.storebg+')':'background:#333333'}}">
+      <image wx:if="{{merch.logo}}" class="logo" src="{{merch.logo}}"></image>
+      <image wx:else class="logo" src="/static/images/noface.png"></image>
+      <image class='logoright' bindtap='imgTap' data-src='{{merch.wxcode}}' src='{{merch.wxcode}}'></image>
+  </view>
+  <view class='intro'>
+    <text class='name'>{{merch.merchname}}</text>
+    <text class='des' wx:if="{{merch.salecate}}">主营：{{merch.salecate}}</text>
+    <text class='des' wx:if="{{merch.tel}}" bindtap="callme" data-id="{{merch.tel}}">客服电话：{{merch.tel}}</text>
+    <text class='des' wx:if="{{merch.address}}">地址：{{merch.address}}</text>
+    <view class='info'>
+      <view class="wxParse">
+        <template is="wxParse" data="{{wxParseData:wxParseData.nodes}}" />
+      </view>
+    </view>
+    <map wx:if="{{merch.lat && merch.lng}}" longitude="{{merch.lng}}" latitude="{{merch.lat}}" markers="{{markers}}" covers="{{covers}}" style="width: 100%; height: 300px;margin-top:30px"></map>
+  </view>
+</view>

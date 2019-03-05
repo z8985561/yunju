@@ -1,0 +1,21 @@
+<!--pages/goods/poster/index.wxml-->
+<view class='poster {{full?"full":""}}'>
+    <view wx:if="{{!full}}" class='poster_box'>
+        <view class='posterimg poster_show' style='width:{{posterwidth}}px;height:{{lgimgheight}}'>
+            <image class="image" wx:if='{{poster}}' src='{{poster}}' style='height:{{lgimgheight}}rpx' bindload="loadImg" mode="widthFix"></image>
+            <!--image class="image" wx:if='{{poster}}' src='{{poster}}' bindload="loadImg" style=""></image-->
+        </view>
+    </view>
+    
+</view>
+
+<view class='tips'>
+    <view class='savepic' bindtap='savePicture'>保存图片</view>
+    <text class='icox icox-taiyang1' style='color:#ffd800'></text>
+    保存至相册可以分享至朋友圈
+</view>
+
+<view class="fui-toast {{FoxUIToast.show?'in':'out'}}">
+    <view class="text">{{FoxUIToast.text}}</view>
+</view>
+

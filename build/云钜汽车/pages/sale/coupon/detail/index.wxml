@@ -1,0 +1,104 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='page'>
+    <view class='coupon-detail'>
+      <view class='coupon-detail-head {{detail.color}}'>
+        <view class='coupon-detail-head-title'>
+          <view class='title'>{{detail.name}}</view>
+          <view class='subtitle'>有效期: {{detail.usestr}} {{detail.merchstr}}</view>
+        </view>
+        <view class='coupon-detail-head-info'>
+          <view class='useprice'>{{detail.title2}}{{detail.title3}}</view>
+          <view bindtap='receive' class='receive'>
+            <view class='inner'>{{buying?"操作中...":detail.getstr}}</view>
+          </view>
+        </view>
+        <view class='coupon-detal-bot'>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i>
+        </i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></view>
+      </view>
+      <view class='coupon-detail-content'>
+        <view class='coupon-detail-content-info'>
+          <view class='coupon-detail-content-info-top'>
+            <block wx:if='{{detail.money > 0 || detail.credit > 0}}'>
+              <view class='title'>购买价格</view>
+              <view class='text'>{{detail.money}}元{{detail.money > 0 && detail.credit > 0?"+":""}}{{detail.credit}}积分</view>
+            </block>
+            <view class='title'>领取限制</view>
+            <block wx:if='{{detail.islimitlevel == 1}}'>
+              <view class='text'>
+                <view>用户必须达到以下条件之一:</view>
+                <block wx:if='{{detail.limitmemberlevels}}'>
+                  <view class='text'>{{detail.limitmemberlevels}}</view>
+                </block>
+                <block wx:if='{{detail.limitagentlevels}}'>
+                  <view class='text'>{{detail.limitagentlevels}}</view>
+                </block>
+                <block wx:if='{{detail.limitpartnerlevels}}'>
+                  <view class='text'>{{detail.limitpartnerlevels}}</view>
+                </block>
+                <block wx:if='{{detail.limitaagentlevels}}'>
+                  <view class='text'>{{detail.limitaagentlevels}}</view>
+                </block>
+              </view>
+            </block>
+            <block wx:else>
+              <view class='text'>无</view>
+            </block>
+            <view class='title'>有效期限</view>
+            <view class='text' style='font-weight: bold; color:#000;'>{{detail.usestr}} {{detail.merchstr}}</view>
+          </view>
+          <view class='coupon-detail-content-info-top'>
+            <view class='title'>使用说明</view>
+            <block wx:if='{{detail.desc != ""}}'>
+              <view class='text wxParse'><template is='wxParse' data='{{ wxParseData:wxParseData.nodes }}' /></view>
+            </block>
+            <block wx:else>
+              <view class='text'>无</view>
+            </block>
+          </view>
+          <view class='coupon-detail-content-info-bot'>
+            <view class='title'>使用限制</view>
+            <block wx:if='{{detail.coupontype == 2}}'>
+              <view class='text'>本优惠卷只能在收银台中使用</view>
+            </block>
+            <block wx:if='{{detail.limitdiscounttype == 1}}'>
+              <view class='text'>不允许与促销优惠同时使用</view>
+            </block>
+            <block wx:elif='{{detail.limitdiscounttype == 2}}'>
+              <view class='text'>不允许与会员折扣同时使用</view>
+            </block>
+            <block wx:elif='{{detail.limitdiscounttype == 3}}'>
+              <view class='text'>不允许与促销优惠和会员折扣同时使用</view>
+            </block>
+            <block wx:if='{{detail.limitgoodtype == 1}}'>
+              <view class='text'>
+                <view class='text'>允许以下商品使用:</view>
+                <block wx:for='{{detail.limitgoods}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+                  <view class='text'>{{item.title}}</view>
+                </block>
+              </view>
+            </block>
+            <block wx:if='{{detail.limitgoodcatetype == 1}}'>
+              <view class='text'>
+                <view class='text'>允许以下商品分类使用:</view>
+                <block wx:for='{{detail.limitcates}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+                  <view class='text'>{{item.name}}</view>
+                </block>
+              </view>
+            </block>
+            <block wx:if='{{detail.limitgoodtype == 0 && detail.limitgoodcatetype == 0 && detail.limitdiscounttype == 0 && detail.coupontype != 2}}'>
+              <view>无</view>
+            </block>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='fui-toast {{FoxUIToast.show?"in":"out"}}'>
+      <view class='text'>{{FoxUIToast.text}}</view>
+    </view>
+  </view>
+</block>

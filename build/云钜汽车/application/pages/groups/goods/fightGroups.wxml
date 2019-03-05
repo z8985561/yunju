@@ -1,0 +1,59 @@
+<view class='fui-page creditshop-detail-page'>
+	<view class='fui-content navbar'>
+		<view class="lynn_opengroups_head fui-list">
+			<navigator url="/application/pages/groups/goods/index?id={{goods.id}}" class="lynn_index_list_a fui-list-media">
+				<image src="{{goods.thumb}}" alt="{{goods.title}}"></image>
+			</navigator>
+			<view class="fui-list-inner lynn_opengroups_head_goods">
+				<text>{{goods.title}}</text>
+				<view class="lynn_opengroups_head_goods_info">
+					<text class="fl">
+						{{goods.groupnum}}人团：￥ <text>{{goods.groupsprice}}/</text>
+            <view wx:if="{{goods.units!=''}}">
+            <text>{{goods.goodsnum}}{{goods.units}}</text>
+            </view>
+            <view wx:else>
+            <text>1件</text>
+            </view>
+					</text>
+					<text class="fr">
+						已有<text>{{goods.fightnum}}</text>人参团
+					</text>
+					<view style="clear:both;"></view>
+				</view>
+			</view>
+		</view>
+		<view class="lynn_fightgroups">
+			<view class="lynn_fightgroups_head">以下小伙伴正在发起拼团，您可以直接参加</view>
+      <view wx:if="{{teams.length>0}}">
+        <view class="lynn_fightgroups_list">
+          <block wx:for='{{teams}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+          <view class="tableli">
+					<image src="{{item.avatar}}"></image>
+						<view class="lynn_fightgroups_span row" style='display:inline;line-height:40px;'>
+						<view class="fl">
+              <block wx:if="{{item.nickname!=''}}">
+              <text class='ptext22'>{{item.nickname}}</text>
+              </block>
+              <block wx:else>
+                <text class='ptext22'>匿名</text>
+              </block>
+							<text class="btext22">剩余：<text id="residualtime{{idx}}">{{item.hour}}:{{item.minite}}:{{item.second}}</text></text>
+						</view>
+						<view class="fr">
+							还差<text class='btext33'>{{item.num}}</text>人成团
+						</view>
+					</view>
+          <navigator url="/application/pages/groups/orders/confirm?id={{item.goodid}}&teamid={{item.teamid}}&type=groups" class="fr">去参团</navigator>
+				</view>
+          </block>
+        </view>
+      </view>
+			<view wx:else>
+        <view class="lynn_fight_nomarl">
+          暂无相关团购
+        </view>
+			</view>
+		</view>
+	</view>
+</view>

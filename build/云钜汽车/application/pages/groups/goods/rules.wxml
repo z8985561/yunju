@@ -1,0 +1,10 @@
+<import src="/utils/wxParse/wxParse.wxml" />
+<view class='rules'>
+	<view class='rules_detail'>
+		<view class="rules_detail_title">
+      拼团规则
+		</view>
+    <view class='rules_detail_content'><template is='wxParse' data='{{ wxParseData:wxParseData.nodes }}' /></view>
+	</view>
+</view>
+

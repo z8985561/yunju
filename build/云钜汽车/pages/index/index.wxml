@@ -1,0 +1,137 @@
+<view wx:if="{{!closestartadv && startadv && startadv.status==1}}" class="startadv">
+  <view class="bg" style="{{startadv.style.background?'background:'+startadv.style.background+';':''}}{{startadv.style.opacity?'opacity:'+startadv.style.opacity+';':''}}"></view>
+  <view class="info">
+    <swiper indicator-dots="true" indicator-color="#ddd" indicator-active-color="#fff" autoplay="true" circular="true" duration="500" interval="4000" style="height:{{startadvh-100}}px;">
+      <swiper-item wx:for='{{startadv.data}}' wx:for-item='item' wx:for-index='idx' wx:key="*this">
+        <block wx:if="{{item.click==1}}">
+          <image mode="widthFix" src="{{item.imgurl}}" bindload="imagesHeight" class="advimg" data-type="startadvh" bindtap="closestartadv"></image>
+        </block>
+        <block wx:else>
+          <navigator url="{{item.linkurl}}">
+            <image mode="widthFix" src="{{item.imgurl}}" bindload="imagesHeight" class="advimg" data-type="startadvh"></image>
+          </navigator>
+        </block>
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="closeadv" bindtap="closestartadv">
+    <view class="close-btn"></view>
+  </view>
+</view>
+
+<view class="page" style="{{diydata.page.background?'background-color:'+diydata.page.background+';':''}}">
+
+  <block wx:for="{{diydata.items}}" wx:for-item='item' wx:for-index='idx' wx:key="*this">
+    <block wx:if="{{item.id == 'adv'}}">
+      <include src='adv.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'search'}}">
+      <include src='search.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'notice'}}">
+      <include src='notice.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'banner'}}">
+      <include src='banner.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'cube' || item.id == 'picturew'}}">
+      <include src='cube.wxml' />
+    </block>
+     <block wx:if="{{item.id == 'pictures'}}">
+      <include src='pictures.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'nav' || item.id == 'menu'}}">
+      <include src='nav.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'recommand' || item.id == 'goods'}}">
+      <include src='recommand.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'listmenu'}}">
+      <include src='listmenu.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'richtext'}}">
+      <include src='richtext.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'title'}}">
+      <include src='title.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'line'}}">
+      <include src='line.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'blank'}}">
+      <include src='blank.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'fixedsearch'}}">
+      <include src='fixedsearch.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'menu2'}}">
+      <include src='textmenu.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'picture'}}">
+      <include src='picture.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'coupon'}}">
+      <include src='coupon.wxml' />
+    </block>
+    <block wx:if="{{item.id == 'video'}}">
+      <include src='video.wxml' />
+    </block>
+  </block>
+  <view wx:if='{{customer == "1"}}' class="quic ">
+    <view class='info-right'>
+      <view class="quicbg" style='line-height:26rpx;border-radius:45rpx;float:right;height:90rpx;width:90rpx;background:#fff;border-radius:50%;'>
+        <button open-type="contact" MsgType="miniprogrampage" send-message-title="{{member.nickname}}" send-message-img="" show-message-card="true" style='border-radius:50%;background:#fff;'>
+          <image style='width:90rpx;height:90rpx;font-size:22rpx;' src="/static/images/icon/kefu2.png" mode='scaleToFill'>
+          </image>
+        </button>
+      </view>
+    </view>
+  </view>
+  <view bindtap="phone" class="phone" style="background-color:{{phonecolor}};color:#fff;bottom:300rpx;" wx:if="{{phone==1}}">
+    <view class='quickm' style=' width:45rpx;height:45rpx;line-height:26rpx;font-size:18rpx;border-radius:45rpx;padding:22rpx;float: right;'>
+      <text class="icox icox-dianhua"></text>电话</view>
+  </view>
+  <view wx:if='{{qrcode == "1"}}' class="quic">
+    <view class='info-left'>
+      <view class="quicbg" bindtap='showImage' data-src="{{qrcodethumb}}" style='width:45rpx;height:45rpx;line-height:26rpx;background:#000;opacity:0.5;color:#fff;font-size:22rpx;border-radius:45rpx;padding:22rpx;float:right;'>二维码
+      </view>
+    </view>
+  </view>
+    <view class="model" wx:if="{{modelShow}}">
+      <include src="/pages/index/openauth.wxml"></include>
+  </view>
+  <include src="/pages/common/goods-picker.wxml"></include>
+  <include src="/pages/common/city-picker.wxml"></include>
+  <include src='/pages/common/menu.wxml' />
+  <include src='/pages/common/get-coupon.wxml' />
+  <include src='/pages/common/danmu.wxml' />
+</view>
+
+
+<template name="tpl_list">
+  <view class='fui-goods-item' data-goodsid='{{item.id}}' data-type='{{item.type}}'>
+    <navigator url='/pages/goods/detail/index?id={{item.id}}'>
+      <view class='image' style='background-image:url("{{item.thumb}}")'>
+        <block wx:if='{{item.total <= 0}}'>
+          <view class='salez' style='background-image: url("{{item.saleout}}");'></view>
+        </block>
+      </view>
+    </navigator>
+    <view class='detail'>
+      <navigator url='/pages/goods/detail/index?id={{item.id}}'>
+        <view class='name'>
+          {{item.title}}
+          <block wx:if='{{item.ispresell == 1}}'>
+            <text class='fui-tag fui-tag-danger'>预售</text>
+          </block>
+        </view>
+        <view class='index_price price'>
+          <view class='text'>
+            ￥{{item.minprice}}
+          </view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</template>
+

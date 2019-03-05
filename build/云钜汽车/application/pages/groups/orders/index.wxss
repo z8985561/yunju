@@ -1,0 +1,20 @@
+body{ background:#f7f7f7; }
+.goods-info{ width: auto }
+.order .contain{ margin-top: 90rpx; }
+.order .btn{ margin:10rpx 0 10rpx 20rpx; padding: 10rpx 10rpx; height:50rpx; line-height: 30rpx; }
+.order .empty{ padding:260rpx 150rpx; font-size: 34rpx; }
+.order .empty .btn{ padding: 20rpx 20rpx; height:80rpx; line-height: 40rpx; font-size: 34rpx; }
+.order .light{ height: 260rpx; width: 240rpx; margin-bottom: 55rpx; }
+.order .text-cancel{ padding: 10rpx; }
+.order .order-num{ -webkit-flex: 1; flex: 1; }
+.fui-tab-scroll .item { padding: 0 30rpx; }
+.order .fui-list-inner .subtitle { line-height:44rpx; }
+.orderscroll {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+}
+.orderscroll:after { content: ""; height: 2rpx; width: 100%; background: #efefef; position: absolute; left: 0; bottom: 0; z-index: 2; }
+.orderscroll .item { height: 80rpx; width: auto; line-height: 80rpx; color: #333; padding: 0 30rpx; font-size: 30rpx; display: inline-block; }
+.orderscroll .item.active { color: #fe5455; position: relative; z-index: 10; }
+.orderscroll .item.active:before { content: ""; height: 6rpx; width: 100%; background: #fe5455; position: absolute; bottom: 0; left: 0; z-index: 1; }

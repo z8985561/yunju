@@ -1,0 +1,42 @@
+<template name="tpl_list">
+<navigator url='../detail/detail?id={{item.id}}'>
+  <view class='fui-list'>
+    <view class='fui-list-media'>
+      <image src='{{item.thumb}}' class='round'></image>
+    </view>
+    <view class='fui-list-inner'>
+      <view class='row'>
+        <view class='row-text'>
+          {{item.title}}
+        </view>
+      </view>
+      <view class='subtitle'>
+        {{item.createtime}}</view>
+    </view>
+    <view class='fui-list-angle'>
+      <view class='angle'></view>
+    </view>
+  </view>
+</navigator>
+</template>
+
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='fui-page page-shop-notice-detail'>
+    <view class='fui-content'>
+      <view class='fui-list-group'>
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="*this">
+          <template is='tpl_list' data='{{ item:item }}' />
+        </block>
+      </view>
+    </view>
+    <block wx:if='{{list.length <= 0 && !loading}}'>
+      <view class='content-empty'>
+        <icon type='search' size='80'></icon>
+        <view>暂时没有任何公告</view>
+      </view>
+    </block>
+  </view>
+</block>

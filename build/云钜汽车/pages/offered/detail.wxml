@@ -1,0 +1,104 @@
+<!--pages/offered/detail.wxml-->
+<view class='pic'>
+  <image src='/img/car-1.jpg' mode='widthFix'></image>
+  <view class='num-people'>{{cartInfo.peopleNum}}人已报名</view>
+</view>
+<view class='price-box'>
+  <view class='left'>
+    <view class='fz-24 cf'>官方指导价</view>
+    <view class='fz-34 cf text-line'>￥{{cartInfo.floorPrice}}-{{cartInfo.topPrice}}万</view>
+  </view>
+  <view class='right'>
+    <view class='fz-24 cf'>团购倒计时</view>
+    <view class='fz-30 cf'>
+      <text>{{time.days}}</text> :
+      <text>{{time.hour}}</text> :
+      <text>{{time.minute}}</text> :
+      <text>{{time.second}}</text>
+    </view>
+  </view>
+</view>
+<view class='plr-30'>
+  <view class='title'>
+    <view>
+      <image src='/img/honda.png' mode='widthFix'></image>
+      <text class='fz-34 fw-700'> {{cartInfo.cartName}}</text>
+    </view>
+    <view>
+      <button open-type='share' hover-class="none">
+        <van-icon size="24px" name="share" />
+      </button>
+    </view>
+  </view>
+  <view class='subsidy'>
+    <view class='lightning'>
+      <image src='/img/lightning.png'></image>
+      <text> 闪购</text>
+    </view>
+    <view>置换补贴{{cartInfo.subsidy}}元</view>
+  </view>
+  <van-row custom-class="process" gutter="10">
+    <van-col span="8">
+      <view class='process-item'>
+        <view class='tips'>
+          <text>1</text>
+          <text class='fz-32'> 预约砍价</text>
+        </view>
+        <view class='fz-26 c6'>
+          车主填写正确的报名信息，抢得砍价资格
+        </view>
+        <van-icon name="arrow" size='30px' color="#cccccc" />
+      </view>
+    </van-col>
+    <van-col span="8">
+      <view class='process-item'>
+        <view class='tips'>
+          <text>2</text>
+          <text class='fz-32'> 确认需求</text>
+        </view>
+        <view class='fz-26 c6'>
+          资深顾问将在1个工作日内与您确认购车需求
+        </view>
+        <van-icon name="arrow" size='30px' color="#cccccc" />
+      </view>
+    </van-col>
+    <van-col span="8">
+      <view class='process-item'>
+        <view class='tips'>
+          <text>3</text>
+          <text class='fz-32'> 预约到店</text>
+        </view>
+        <view class='fz-26 c6'>
+          到店立享马上买车大客户专享优惠，签订购车合同
+        </view>
+      </view>
+    </van-col>
+  </van-row>
+  <!-- 温馨提示 -->
+  <view class='fz-24 cc mb-150'>
+    <view>温馨提示：</view>
+    <view>为保证服务质量，每天限30名。</view>
+    <view>如您已向4S店缴纳定金，我们暂无法受理，请您见谅。</view>
+    <view>为保障您的信息安全，我们将用95013****的虚拟号和您联系。</view>
+  </view>
+</view>
+<view class='bottom-nav'>
+  <view class='left fw-700' bindtap='consulting'>咨询</view>
+  <view class='right fw-700' bindtap='showOfferd'>参团</view>
+</view>
+<van-popup show="{{ show }}" bind:close="onClose">
+  <view class='offered-form'>
+    <view class='fz-24 cc'>提示：请输入联系方式，完成报名，方便工作人员与您联系</view>
+    <van-cell-group>
+      <van-field value="{{ username }}" label="姓名" left-icon="contact" placeholder="请输入姓名" />
+      <van-field value="{{ code }}" label="电话" left-icon="phone-o" placeholder="请输入手机号码" />
+      <van-field value="{{ sms }}" center clearable label="验证码" left-icon="info-o" placeholder="请输入短信验证码" border="{{ false }}" use-button-slot>
+        <van-button slot="button" size="small" type="primary">获取验证码</van-button>
+      </van-field>
+    </van-cell-group>
+    <van-checkbox value="{{ checked }}" bind:change="onChange">
+      <text class='fz-26'>同意</text><text class='fz-26'>《个人信息保护声明》</text>
+    </van-checkbox>
+    <view class='submit-btn' bindtap='submitForm'>提交</view>
+  </view>
+</van-popup>

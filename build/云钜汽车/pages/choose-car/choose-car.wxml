@@ -1,0 +1,86 @@
+<scroll-view scroll-y style="height: {{windowHeight}}px" scroll-into-view="{{alpha}}" enable-back-to-top="true">
+  <!-- 头部筛选按钮部分 -->
+  <view class='filtrate'>
+    <view class='filtrate-top'>
+      <navigator class='btn' hover-class='none' url="/pages/filtru/filtru">条件筛选（9691车型）></navigator>
+      <navigator hover-class='none' url>
+        <icon type='search' size='20' color='#333'></icon>
+      </navigator>
+    </view>
+    <view class='filtrate-list'>
+      <navigator hover-class='none' url='/pages/brand-screening/brand-list?minPrice=5&maxPrice=8'>5-8万</navigator>
+      <navigator hover-class='none' url='/pages/brand-screening/brand-list?minPrice=8&maxPrice=15'>8-15万</navigator>
+      <navigator hover-class='none' url='/pages/brand-screening/brand-list?minPrice=15&maxPrice=20'>15-20万</navigator>
+      <navigator hover-class='none' url='/pages/brand-screening/brand-list?minPrice=25&maxPrice=30'>25-30万</navigator>
+      <navigator hover-class='none' url='/pages/brand-screening/brand-list?keyword=轿车'>轿车</navigator>
+      <navigator hover-class='none' url='/pages/brand-screening/brand-list?keyword=suv'>SUV</navigator>
+      <navigator hover-class='none' url='/pages/brand-screening/brand-list?keyword=7座'>7座</navigator>
+      <navigator hover-class='none' url='/pages/brand-screening/brand-list?keyword=紧凑型车'>紧凑型车</navigator>
+    </view>
+  </view>
+  <!-- 头部筛选按钮部分end -->
+  <!-- 加群轮播 -->
+  <swiper class='banner-box' wx:if="{{is_show}}" indicator-dots autoplay circular>
+    <navigator url="/pages/addGroup/index">
+      <block wx:for="{{bannerList}}" wx:key>
+        <swiper-item>
+          <image src='{{item}}'></image>
+        </swiper-item>
+      </block>
+    </navigator>
+  </swiper>
+  <!-- 加群轮播end -->
+  <!-- 热门品牌 -->
+  <view class='hot-brand'>
+    <view class='title'>热门品牌</view>
+    <view class='list'>
+      <block wx:for="{{brandList}}" wx:key="index">
+        <navigator hover-class='none' url='/pages/brand-list/brand-list?id={{item.id}}'>
+          <image src='{{item.imgUrl}}' mode='widthFix'></image>
+          <text>{{item.text}}</text>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <!-- 热门品牌end -->
+  <!-- 浏览记录 -->
+  <view class='hot-brand' style='border-top:none;' wx:if="{{recordList}}">
+    <view class='title'>浏览记录</view>
+    <scroll-view class='record' scroll-x style='height:100px;'>
+      <block wx:for="{{recordList}}" wx:key="index">
+        <navigator style='display:inline-block;margin:0 5px;width:70px;' hover-class='none' url='/pages/details/details?id={{item.id}}&name={{item.name}}&imgUrl={{item.imgUrl}}&carName={{item.carName}}'>
+          <image src='{{item.imgUrl}}' mode='widthFix' style='width:100%;height:100%;'></image>
+          <view class='record-text'>{{item.carName}}</view>
+        </navigator>
+      </block>
+    </scroll-view>
+  </view>
+  <!-- 浏览记录end -->
+  <view class="alphabet">
+    <view class="alphabet-list">
+      <view wx:for="{{list}}" wx:key="unique" id="{{item.alphabet}}" class="section-item">
+        <view class="section-item-header">
+          {{item.alphabet}}
+        </view>
+        <navigator url='/pages/brand-list/brand-list?id={{cell.id}}' hover-class='none' wx:for="{{item.datas}}" wx:key="unique" wx:for-item="cell" wx:for-index="cellIndex" class="section-item-cells">
+          <view class="section-item-cell {{cellIndex != (item.datas.length-1) ? 'border-bottom':''}}">
+            <image class='avater' src='{{cell.avater}}'></image>
+            <view>
+              <view>{{cell.name}}</view>
+              <view class='state'>{{cell.state}}</view>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view data-id="selector" catchtouchstart="handlerAlphaTap" catchtouchmove="handlerMove" catchtouchend='handlerEnd' style='height:{{windowHeight - 120}}px;' class="alphanet-selector {{addBg?'bg':''}}">
+  <view data-ap="{{item.alphabet}}" wx:for="{{list}}" wx:key="unique" class="selector-one">
+    {{item.alphabet}}
+  </view>
+</view>
+<view wx:if="{{addBg}}" class='show-alpha'>
+  {{alpha}}
+</view>
+<include src="/pages/common/menu.wxml"></include>

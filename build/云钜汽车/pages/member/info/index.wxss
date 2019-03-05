@@ -1,0 +1,6 @@
+@import "../../common/city-picker.wxss";
+wx-checkbox-group wx-text { padding-right: 15rpx; }
+.picker-group { display: -webkit-flex; display: flex; }
+.picker-group wx-picker { width: 40%; }
+.btn{ font-size: 32rpx }
+

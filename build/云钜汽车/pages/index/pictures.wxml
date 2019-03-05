@@ -1,0 +1,20 @@
+<view class="fui-pictures single row-{{item.params.rownum}}" style="padding:{{item.style.paddingtop*2}}rpx {{item.style.paddingleft*2}}rpx;background:{{item.style.background}};" wx:if="{{item.params.showtype==0}}">
+    <view bindtap="navigate" class="item" data-url="{{items.linkurl}}" style="padding:10rpx" wx:key="{{index}}" wx:for="{{item.data}}" wx:for-index="idx" wx:for-item="items">
+        <view class="image" style="text-align:{{item.style.titlealign}};color:{{item.style.titlecolor}}">
+            <image mode="widthFix" src="{{items.imgurl}}"></image>
+            <view class="title" style="color:{{items.titlecolor}}">{{items.title}}</view>
+        </view>
+        <view class="text" style="text-align:{{item.style.textalign}};color:{{item.style.textcolor}}">{{items.text}}</view>
+    </view>
+</view>
+<view style="overflow:hidden;white-space:nowrap;padding:{{item.style.paddingtop*2}}rpx {{item.style.paddingleft*2}}rpx;background:{{item.style.background}};" wx:else>
+    <scroll-view scrollX class="fui-pictures row-{{item.params.rownum}}">
+        <view bindtap="navigate" class="item" data-url="{{items.linkurl}}" style="padding:10rpx" wx:key="{{index}}" wx:for="{{item.data}}" wx:for-index="idx" wx:for-item="items">
+            <view class="image" style="text-align:{{item.style.titlealign}};color:{{item.style.titlecolor}}">
+                <image mode="widthFix" src="{{items.imgurl}}"></image>
+                <view class="title" style="color:{{items.titlecolor}}">{{items.title}}</view>
+            </view>
+            <view class="text" style="text-align:{{item.style.textalign}};color:{{item.style.textcolor}}">{{items.text}}</view>
+        </view>
+    </scroll-view>
+</view>

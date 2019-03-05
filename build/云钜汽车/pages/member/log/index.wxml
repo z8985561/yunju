@@ -1,0 +1,72 @@
+<block wx:if='{{!show}}'>
+  <loading>加载中...</loading>
+</block>
+<block wx:if='{{show}}'>
+  <view class='page navbar {{isopen == 1?"header":""}}'>
+    <block wx:if='{{isopen == 1}}'>
+      <view class='fui-tab fixed fui-tab-danger'>
+        <view bindtap='myTab' data-type='0' class='item {{type == 0?"active":""}}'>充值记录</view>
+        <view bindtap='myTab' data-type='1' class='item {{type == 1?"active":""}}'>提现记录</view>
+      </view>
+    </block>
+    <block wx:if='{{list.length > 0}}'>
+      <view class='fui-list-group'>
+        <block wx:for='{{list}}' wx:for-item='item' wx:for-index='index' wx:key="list">
+          <view class='fui-list goods-item'>
+            <view class='fui-list-inner'>
+              <view class='title'>
+                <block wx:if='{{item.type == 0}}'>
+                  <text>充值金额</text>
+                </block>
+                <block wx:if='{{item.type == 1}}'>
+                  <text>提现金额</text>
+                </block>
+                <block wx:if='{{item.type == 2}}'>
+                  <text>佣金打款</text>
+                </block>
+                <block wx:if='{{item.type == 3}}'>
+                  <text>个人消费</text>
+                </block>
+                <text>: {{item.money}}元</text></view>
+              <block wx:if='{{item.type == 1}}'>
+                <view class='text'>(提现方式: {{item.typestr}}), 实际{{item.status == 1?"到账":"金额"}}: {{item.deductionmoney > 0?item.realmoney:item.money}}元, 手续费: {{item.deductionmoney}}元)</view>
+              </block>
+              <view class='text'>{{item.createtime}}</view>
+            </view>
+            <view class='fui-list-angle'>
+              <block wx:if='{{item.status == "0"}}'>
+                <text class='fui-label fui-label-default'>{{item.type == 0?"未充值":"申请中"}}</text>
+              </block>
+              <block wx:if='{{item.status == 1}}'>
+                <text class='fui-label fui-label-success'>成功</text>
+              </block>
+              <block wx:if='{{item.status ==  ""&& item.type == 1}}'>
+                <text class='fui-label fui-label-danger'>成功</text>
+              </block>
+              <block wx:if='{{item.status == 3 && item.type == 0}}'>
+                <text class='fui-label fui-label-warning'>退款</text>
+              </block>
+            </view>
+          </view>
+        </block>
+      </view>
+      <block wx:if='{{loading}}'>
+        <view class='fui-loading'>
+          <view class='icon'></view>
+          <view class='text'>正在加载</view>
+        </view>
+      </block>
+      <block wx:if='{{loaded && list.length > 0}}'>
+        <view class='fui-loading empty'>
+          <view class='text'>没有更多了</view>
+        </view>
+      </block>
+      <block wx:if='{{total <= 0 && !loading}}'>
+        <view class='fui-loading empty'>
+          <view class='text'>没有数据</view>
+        </view>
+      </block>
+      <include src='/pages/common/menu.wxml' />
+    </block>
+  </view>
+</block>

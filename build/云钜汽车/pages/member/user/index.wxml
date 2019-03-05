@@ -1,0 +1,31 @@
+<view class="after-navber">
+  <view class="user-info flex-row">
+    <image class="user-info-bg" mode="aspectFill" src="{{user_center_bg}}" />
+    <view class="flex-grow-1 flex-y-center flex-row userinfo-name" style='background:{{background}}'>
+      <view class="flex-grow-0">
+        <image class="avatar" src="{{avatar}}" />
+      </view>
+      <view class="flex-grow-1">
+        <text class="user-name">{{nickname}}</text>
+        <view class='user-level flex-row' bindtap='{{(next_level || (user_info&&user_info.level!=-1))?"member":""}}'>
+          <view class='level-name flex-y-bottom'>
+            <view class='flex-y-center' style='height:100%;'>{{levelname}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class=' integral flex-row'>
+      <view class="flex-grow-0 flex-y-center">
+      </view>
+      <view class="flex-grow-1 flex-y-center">
+        有效期
+        <view class='flex-y-center integral-num'>{{leveldeadline}}</view>
+      </view>
+    </view>
+  </view>
+  <import src="/utils/wxParse/wxParse.wxml" />
+  <view class='wxParse' style='margin:0px;text-align:center;'>
+    <template is='wxParse' data='{{ wxParseData:htmlcontent.nodes}}' />
+  </view>
+</view>
